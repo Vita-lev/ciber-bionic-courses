@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task5</title>
+  </head>
+  <body>
+    <pre>
+        Завдання:
+        Виконайте завдання відповідно до коментаря у коді
+    </pre>
+    <script>
+      let product1 = "Папір офісний А4, 80 г/м2, 500 л";
+      let product2 = "Біндери для паперу 51 мм";
+      let product3 = "Ручка кулькова синя";
+
+      let productPrice1 = 280.25;
+      let productPrice2 = 56;
+      let productPrice3 = 12.5;
+
+      let productQuantity1 = +prompt(
+        `Вкажіть кількість продуктів '${product1}', ціна ${productPrice1}`,
+        0,
+      );
+      let productQuantity2 = +prompt(
+        `Вкажіть кількість продуктів '${product2}', ціна ${productPrice2}`,
+        0,
+      );
+      let productQuantity3 = +prompt(
+        `Вкажіть кількість продуктів '${product3}', ціна ${productPrice3}`,
+        0,
+      );
+
+      // Виведіть на екран скільки користувачеві потрібно заплатити за кожен продукт за індивідуальністю і всього за
+      // всі продукти
+      // Використовуйте форматоване виведення інформації
+
+      let sum1 = productPrice1 * productQuantity1;
+      let sum2 = productPrice2 * productQuantity2;
+      let sum3 = productPrice3 * productQuantity3;
+
+      let total = sum1 + sum2 + sum3;
+
+      document.write(`
+       <h2>Чек</h2>
+      <p>${product1}: ${productQuantity1} шт. * ${productPrice1} грн = ${sum1.toFixed(2)} грн</p>
+      <p>${product2}: ${productQuantity2} шт. * ${productPrice2} грн = ${sum2.toFixed(2)} грн</p>
+      <p>${product3}: ${productQuantity3} шт. * ${productPrice3} грн = ${sum3.toFixed(2)} грн</p>
+      <hr>
+      <h3>Всього до сплати: ${total.toFixed(2)} грн</h3>
+    
+    `);
+    </script>
+  </body>
+</html>

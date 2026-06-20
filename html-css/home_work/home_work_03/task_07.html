@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_07</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .link {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+         transition: 1.1s;
+        }
+
+        .link:hover {
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .link:hover {
+            color: black;
+        }
+
+        .link:active {
+            color: rgb(246, 135, 7);
+        }
+
+        .menu {
+            display: flex;
+            background-color: gray;
+            padding: 5px 30px 0 50px;
+            font-size: 14px;
+            justify-content: space-between;
+        }
+
+        .menu--box {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .btn {
+            background-color: orange;
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            color: white;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+        color: grey;
+        transform: scale(1.1);
+        }
+
+        .btn:active {
+        background-color: gray;
+        color: rgb(255, 134, 28);
+        transform: scale(1.1);
+        border: 1px solid black;
+        }
+
+        .hero {
+        text-align: center;
+        }
+
+        .h1 {
+        color: orange;
+        margin-top: 100px;
+        margin-bottom: 10px;
+        }
+
+        .text {
+        color: gray;
+        margin-bottom: 50px;
+        }
+
+        .btn--group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="menu">
+                <a href="#"><img src="./images/logo.png" alt="logo"></a>
+                <div class="menu--box">
+                    <a class="link" target="_blank" href="tel:+380800337146"><img src="/images/phone icon.png" alt=""> 0 800 337 146</a>
+                    <a class="link" target="_blank" href="skype:live.username?chat"><img src="/images/Skype icon.png" alt=""> support_cbs</a>
+                    <a class="link" target="_blank" href="https://t.me/username"><img src="/images/telegram icon.png" alt=""> cbs_support</a>
+                    <button class="btn">Заказать консультацию</button>
+                </div>
+                
+            </div>
+            <div class="hero">
+                <h1 class="h1">Курсы програмирования</h1>
+                <p class="text">Комплексные программы обучения</p>
+                <div class="btn--group">
+                    <button class="btn">Заказать консультацию</button>
+                    <button class="btn">Пробный урок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

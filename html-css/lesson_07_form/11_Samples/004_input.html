@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        input[type="text"]{
+            background-color: aqua;
+            padding: 20px;
+        }
+
+        input[type="text"]:focus {
+            border: 1px solid black;
+            outline: 3px solid red;
+        }
+
+        #y {
+            display: none;
+            background-color: aquamarine;
+            height: 100px;
+        }
+
+        #y1-label {
+            background-color: blue;
+        }
+
+        #y::file-selector-button {
+            background-color: blue;
+            outline: 4px solid tomato;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="" >
+       <p>
+        <input type="text">jjjj
+           <!-- 
+               Для відправлення файлу на сервер у форми повинен бути встановлений атрибут enctype="multipart/form-data".
+               Атрибути:
+                - accept - встановлює тип файлів, які припустимі вибору.
+                - multiple – дозволяє вибирати безліч файлів.
+                - required - вимагає обов'язкового вибору файлу.
+             -->
+
+             br>
+       <br>
+       <br>
+       <br>
+       <label for="y" id="y1">ggggggg</label>
+           <input id="y" type="file" value="Оберіть файл..." multiple accept=".html"/>
+       </p>
+
+       <br>
+       <br>
+       <br>
+       <br>
+        <p>
+            <!-- Приховане поле, яке не відображається на сторінці. Призначено для зберігання даних, які не потрібно
+            відображати користувачеві. -->
+            <input type="hidden" value="secret value" />
+        </p>
+        <p>
+            <!-- Звичайній кнопці можна задати обробник за допомогою JavaScript. -->
+            <button type="submit">Звичайна кнопка</button>
+        </p>
+        <p>
+            <input type="image" src="img/send.png" width="32" value="Надіслати" />
+        </p>
+    </form>
+</body>
+</html>

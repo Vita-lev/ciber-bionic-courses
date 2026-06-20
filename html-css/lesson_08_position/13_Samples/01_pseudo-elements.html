@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pseudo-elements</title>
+	<!-- https://css.in.ua/css/selector/after -->
+	<!-- https://css.in.ua/css/selector/before -->
+</head>
+<body>
+	<style>
+		.block{
+			background: aqua;
+			height: 50px;
+		}
+		/* без властивості content псевдоелемент не утвориться!  */
+		p::before{}
+
+		.block::before{
+			content: 'BEFORE';
+		}
+		.block::after{
+			content: ' AFTER';
+		}
+		/* з HTML5 after та before можна писати і з однією двокрапкою,
+		але не плутати їх із псевдокласами!  */
+		.block:after{
+			font-style: italic;
+		}
+		/* текст псевдоелементів не вирізняється! */
+		/* Виділити текст параграфу та тегу div для порівняння */
+		p::selection{
+			background: red;
+			color: gold;
+		}
+	</style>
+	<div class="block"> | Text div element | </div>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</body>
+</html>

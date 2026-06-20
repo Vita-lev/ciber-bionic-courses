@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+
+<body>
+    <pre>
+        Завдання:
+        Перепишіть код так, щоб метод print використовував контекст та поведінка коду при цьому не зміниться.
+    </pre>
+    <script>
+        let obj1 = {
+            firstName: "Ivan",
+            lastName: "Ivanov",
+
+            print: function (obj) {
+                console.log("First Name: " + this.firstName);
+                console.log("Last Name: " + this.lastName);
+            }
+        };
+
+        obj1.print();
+    </script>
+</body>
+
+</html>

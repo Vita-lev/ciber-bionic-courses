@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-items</title>
+</head>
+<body>
+    <style>
+        .two{font-size: 20px;
+        align-self: start;
+    justify-self: start;}
+        .three{font-size: 30px;}
+        .four{font-size: 40px;}
+        
+        .container{
+            background: lightgreen;
+            max-width: 1000px;
+            height: 300px;
+            margin: 50px auto;
+            display: flex;
+
+            justify-content: space-between;
+            /* flex-direction: column;  */
+            /* align-items впливає на другорядний потік дочірніх елементів */
+            /* align-items: stretch; */
+            align-items: center;
+            /* align-items: center; */
+            /* align-items: center; */
+            /* align-items: baseline; */
+        }
+        .item{
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            background: orange;
+            padding: 10px;
+            width: 50px;
+          
+        }
+
+        .item:active{
+            align-self:flex-end;
+        }
+    </style>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item two">2</div>
+        <div class="item three">3</div>
+        <div class="item four">4</div>
+    </div>
+</body>
+</html>

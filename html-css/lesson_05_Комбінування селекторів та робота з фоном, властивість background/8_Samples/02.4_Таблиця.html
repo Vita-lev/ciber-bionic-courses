@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблиці</title>
+</head>
+<body>
+
+    <style>
+        th {
+            padding: 5px;
+            border: 3px solid black;
+        }
+
+        td {
+            padding: 5px;
+            border: 3px solid black;
+        }
+
+        table {
+            /* Властивістю border задаємо межі таблиці. */
+            border: 3px solid black;
+            /*
+                Властивість border-collapse дозволяє задавати відображення межі коло комірок таблиці.
+                Має декілька значень:
+                    - collapse - межі комірок об'єднується в одну, а проміжки між рамками прибираються.
+                    - separate - межі комірок розташовуються окремо.
+            */
+            border-collapse: separate;
+            /*
+                Властивість border-spacing дозволяє задати відступи між осередками та рамкою таблиці.
+                Якщо встановлено одне значення – відступи з усіх боків однакові, якщо два значення, то перше задає
+                відстань по горизонталі, друге – по вертикалі.
+            */
+            border-spacing: 5px;
+            /*
+                Властивість empty-cells дозволяє встановити параметри відображення порожніх осередків.
+                Має два значення:
+                    - show - рамка та фон відображаються.
+                    - hide - приховує комірку, задаючи їй властивість display: none.
+            */
+            empty-cells: hide;
+        }
+    </style>
+    <table>
+
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Q1</th>
+                <th>Q2</th>
+                <th>Q3</th>
+                <th>Q4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Microsoft</td>
+                <td>20.3</td>
+                <td>30.5</td>
+                <td>23.5</td>
+                <td>40.3</td>
+            </tr>
+            <tr>
+                <td>Google</td>
+                <td>50.2</td>
+                <td>40.63</td>
+                <td>45.23</td>
+                <td>39.3</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>25.4</td>
+                <td>30.2</td>
+                <td>33.3</td>
+                <td>36.7</td>
+            </tr>
+            <tr>
+                <td>IBM</td>
+                <td>20.4</td>
+                <td>15.6</td>
+                <td></td>
+                <td>29.3</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

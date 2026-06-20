@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблиці</title>
+</head>
+<body>
+    <style>
+        table{
+            border: 3px solid blue;
+        }
+        td{
+            border: 3px solid black;
+            padding: 5px;
+        }
+    </style>
+
+    <!-- colspan = Об'єднує осередки по горизонталі  -->
+    <!-- rowspan = Об'єднує осередки вертикалі       -->
+    <table >
+            <tr>
+                <td>HTML</td>
+                <td colspan="2">Стартовый</td>
+                <!-- <td>5 днів</td> -->
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Стартовий</td>
+                <td>14 днів</td>
+            </tr>
+            <tr>
+                <td rowspan="2">JavaScript</td>
+                <td>Стартовий</td>
+                <td>10 днів</td>
+            </tr>
+            <tr>
+                <!-- видалений ряд -->
+                <td>Базовий</td>
+                <td>20 днів</td>
+            </tr>
+    </table>
+
+</body>
+</html>

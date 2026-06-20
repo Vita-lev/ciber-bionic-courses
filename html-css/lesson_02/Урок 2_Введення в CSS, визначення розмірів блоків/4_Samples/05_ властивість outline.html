@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- https://css.in.ua/css/property/outline -->
+</head>
+<body>
+
+    <style>
+        .block{
+            width: 100px;
+            height: 100px;
+            outline: 50px solid blue;
+            /* Не змінює розмір елемента! */
+            /* Немає можливості задати границю на один бік */
+        }
+
+        .block:hover {
+            outline: 150px solid red;
+        }
+        input{
+            /* outline: none; */
+            /* border: none; */
+        }
+    </style>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ullam repellendus dolor dicta quae rem facilis maxime incidunt vel tenetur, fugiat maiores architecto voluptas quisquam dolores. Minus qui ex quis?
+
+    <div class="block">
+        Блочний елемент
+    </div>
+    <hr>
+    <br>
+    <br>
+    <input type="text">
+
+</body>
+</html>

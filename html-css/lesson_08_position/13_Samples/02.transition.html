@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transition</title>
+	<!-- https://css.in.ua/css/property/transition -->
+</head>
+<body>
+	
+	<div class="element">
+		
+	</div>
+
+	<style>
+
+		.element{
+			width: 100px;
+			height: 100px;
+			background: red;
+			/*transition: 1s;*/
+			/*transition: width 0.5s, height 3s;*/
+            /* друге значення не обов'язкове, затримка перед анімацією */
+			/* transition: 1s 2s; */
+		}
+        /* transition працює з властивостями, у яких числові значення! */
+		.element:hover{
+			width: 200px;
+			height: 200px;
+			background: blue;
+            /* размістивши властивість тут поведінка інша */
+			/* transition: 2s; */
+		}
+	</style>
+</body>
+</html>

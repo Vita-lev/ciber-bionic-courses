@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMAScript 5 Arrays methods</title>
+</head>
+
+<body>
+    <script>
+        // forEach - обхід всіх елементів масиву та запуск певної функції для кожного елементу
+        var data = [1, 2, 3, 4, 5];
+        var sum = 0;
+
+        // отримання суми всіх елементів
+        data.forEach(function (value) {
+            sum += value;
+        });
+        // data.forEach(value => sum += value); // аналогічний код з використанням стрілочної функції
+        console.log(sum);
+
+        // filter - повертає новий масив з елементів, відібраних функцією.
+        var data1 = [1, 2, 3, 4, 5, 6];
+
+        var data2 = data1.filter(function (value) {
+            return value % 2 == 0;
+        })
+        // var data2 = data1.filter(value => value % 2 == 0); // аналогічний код з використанням стрілочної функції
+
+        console.log(data1); // усі значення
+        console.log(data2); // тільки парні значення
+
+        // map - обходить всі елементи масиву та повертає новий масив зі значеннями, які повернула вказана функція
+
+        var data3 = [1, 2, 3, 4, 5];
+
+        var data4 = data3.map(function (value) {
+            return value * value;
+        });
+        // var data4 = data3.map(value => value * value);  // аналогічний код з використанням стрілочної функції
+
+        console.log(data3); // вихідні значення
+        console.log(data4); // вихідні значення, зведені до другого ступеня
+
+        // ланцюжок викликів та стрілочні функції для максимально компактного коду
+        data1
+            .filter(value => value % 2 == 0)        // фільтрація масиву
+            .forEach(value => console.log(value));  // виведення елементів
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 03</title>
+  </head>
+  <body>
+    <h1>Завдання 3</h1>
+    <p>
+      Створіть одну глобальну змінну з довільним значенням та дві функції.
+      Покажіть, що глобальна змінна може використовуватися в цих двох функціях.
+    </p>
+
+    <script>
+      let message = "Привіт, я глобальна змінна";
+
+      function showFirst() {
+        alert(message);
+      }
+
+      function showSecond() {
+        console.log(message);
+      }
+
+      showFirst();
+      showSecond();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+.h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(225, 224, 224);
+    text-align: center;
+    padding: 10px;
+}
+
+.h3 {
+    text-decoration: underline;
+}
+
+.word--spacing {
+    word-spacing: 20px;
+}
+
+.letter--spacing {
+    letter-spacing: 5px;
+}
+
+.text--green {
+    background-color: aquamarine;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.text--blue {
+    background-color: aqua;
+    font-weight: 700;
+}
+
+.text--pink {
+    background-color: pink;
+    text-indent: 30px;
+}
+
+.btn {
+    padding: 15px;
+    border: none;
+    width: 100px;
+}
+
+.btn--right {
+    padding-left: 55px;
+}

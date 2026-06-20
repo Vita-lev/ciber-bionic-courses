@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            background: green;
+            color: gray;
+            font-size: 40px;
+            border: 10px solid red;
+        }
+        .custom-checkbox,
+        .custom-checkbox-animate{
+            display: block;
+            border: 2px solid black;
+            width: 50px;
+            height: 50px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .custom{
+            /* прибрати стиль */
+            /* display: none; */
+        }
+        /* псевдо елемент :checked можна використовувати тільки у тега input з типом checkbox (<input type="checkbox">)
+        і звернення до нього тільки коли він у вибраному стані знак + звернення до сусіднього елемента що нижче */
+        input:checked + .custom-checkbox {
+            background-image: url(img/1.jpg);
+        }
+
+        input:checked + .custom-checkbox-animate {
+            background-position: 100% 0;
+        }
+        .custom-checkbox-animate{
+            background-image: url(img/2.jpg);
+            transition: 2s;
+            background-size: 200% 100%;
+            background-position: 0 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Стилі до деяких типів тега input не застосовується! checkbox, radio, range ... -->
+    <input type="checkbox">
+
+    <hr>
+    <!-- Порядок тегів для створення кастомного checkbox є обов'язковим! -->
+    <!-- через id та for атрибути створюємо прив'язку між тегами -->
+    <input class="custom" id="field" type="checkbox">
+    <label for="field" class="custom-checkbox"></label>
+
+    <input class="custom" id="flag" type="checkbox">
+    <label for="flag" class="custom-checkbox-animate"></label>
+
+
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

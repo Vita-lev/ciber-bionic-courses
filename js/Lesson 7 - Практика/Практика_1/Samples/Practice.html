@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Practice</title>
+    <script>
+        /*
+
+        Наступні завдання:
+        1. Напишіть математичну функцію, яка приймає (як аргументів)
+        два числа та знак арифметичної операції (+,-,/,*). Функція здійснює арифметичне обчислення
+        та повертає результат у змінну. Вивести результат за допомогою модального вікна alert().
+
+        2. Додайте перевірку двох переданих чисел у вигляді аргументів функції наступним чином:
+        числа можуть передаватися як масивів і повертати результат(так само, масиву).
+        *** розглянути instanceof
+
+        3. Додати третю перевірку: функція приймає два об'єкти з властивостями 'a' та 'b',
+        так само повертає результат у вигляді об'єкта з однією властивістю типу string.
+
+        Примітка: Усі функції повинні проводити перевірки на NaN, null та undefiend.
+
+        */
+        //Метод isNaN намагається перетворити переданий параметр на число.
+        //Якщо параметр може бути перетворений, повертає true, інакше повертає false.
+        //Ця функція корисна, оскільки значення NaN може бути перевірено операторами еквівалентності.
+
+        //var num1 = prompt('Введіть перше число');
+        //var num2 = prompt('Введіть друге число');
+        //var yourOper = prompt('Оберіть оператор +,-, *, /');
+        //var myRes = 0;
+        ////Калькулятор
+        //function myCalc(a, b, oper) {
+        //    a = parseInt(num1);
+        //    b = parseInt(num2);
+        //    oper = yourOper;
+        //    if (typeof (a) == 'number' && typeof (b) == 'number') {
+        //        switch (oper) {
+        //            case '+':
+        //                myRes = a + b;
+        //                if (isNaN(myRes)) {
+        //                    document.write('Ваша змінна NaN');
+        //                } else {
+        //                    document.write('<p>Результат складання Вашого першого числа ' + a + ' та другого числа ' + b + ' = ' + myRes + ' ! ');
+        //                }
+        //                break;
+        //            case '-':
+        //                myRes = a - b;
+        //                if (isNaN(myRes)) {
+        //                    document.write('Ваша змінна NaN');
+        //                } else {
+        //                    document.write('<p>Результат віднімання Вашого першого числа ' + a + ' та другого числа ' + b + ' = ' + myRes + ' ! ');
+        //                }
+        //                break;
+        //            case '*':
+        //                myRes = a * b;
+        //                if (isNaN(myRes)) {
+        //                    document.write('Ваша змінна NaN');
+        //                } else {
+        //                    document.write('<p>Результат множення Вашого першого числа ' + a + ' та другого числа ' + b + ' = ' + myRes + ' ! ');
+        //                }
+        //                break;
+        //            case '/':
+        //                myRes = a / b;
+        //                if (isNaN(myRes)) {
+        //                    document.write('Ваша змінна NaN');
+        //                } else {
+        //                    document.write('<p>Результат поділу Вашого першого числа ' + a + ' та другого числа ' + b + ' = ' + myRes + ' ! ');
+        //                }
+        //                break;
+        //            default:
+        //                document.write('Ви ввели неправильні значення');
+        //        }
+        //    } else {
+        //        alert('не число');
+        //    }
+        //}
+        //;
+        //myCalc();//викликаємо функцію
+
+       
+        //var arr1 = [1, 2, 4];
+        //var arr2 = [1, 2, 3];
+        //var cont = Math(arr1, arr2, '+');
+        //alert('Результат обчислень нульових індексів ваших масивів = ' + cont[0] + ' Результат обчислень перших індексів ваших масивів = ' + cont[1] + ' Результат обчислень других індексів ваших масивів = ' + cont[2]);
+        var obj1 = { a: 3, b: 2 };
+        var obj2 = { a: 3, b: 2 };
+        var showRes = Math(obj1, obj2, '*');
+        alert('Результат обчислень перших властивостей Ваших об\'єктів = ' + showRes.resultA + ' Результат обчислень других властивостей Ваших об\'єктів = ' + showRes.resultB);
+
+        // ------ Task 1-3 ------
+        function Math(a, b, oper) {
+            if (typeof (a) == 'number' && typeof (b) == 'number') {
+                a = parseFloat(a);
+                b = parseFloat(b);
+                var sum = 0;
+                switch (oper) {
+                    case '+': return sum = a + b; break;
+                    case '-': return sum = a - b; break;
+                    case '*': return sum = a * b; break;
+                    case '/': if (b == 0) {
+                        return 'Ділити на нуль не можна';
+                    } else {
+                        return sum = a / b;
+                    }; break;
+                    default: alert('Ви ввели неправильний арифметичний знак!'); break;
+                }
+                alert(sum);
+            }
+            else if (a instanceof Array && b instanceof Array) {//instanceof використовується для перевірки, чи об'єкт належить даному типу
+                // тимчасовий контейнер для результату
+                var tempResArray = [];
+                var length = 0;
+                if (a.length >= b.length) {
+                    length = a.length;
+                }
+                else {
+                    length = b.length;
+                }
+                for (var i = 0; i < length; i++) {
+                    var operand1 = parseFloat(a[i]);
+                    var operand2 = parseFloat(b[i]);
+                    if (isNaN(operand1)) {
+                        operand1 = 0;
+                    } else if (isNaN(operand2)) {
+                        operand1 = 0;
+                    }
+                    switch (oper) {
+                        case '+': tempResArray[i] = operand1 + operand2; break;
+                        case '-': tempResArray[i] = operand1 - operand2; break;
+                        case '*': tempResArray[i] = operand1 * operand2; break;
+                        case '/': if (operand2 == 0) {
+                            return alert('Ділити на нуль не можна');
+                        } else {
+                            tempResArray[i] = operand1 / operand2;
+                        }; break;
+                        default: alert('Ви ввели неправильний арифметичний знак!'); break;
+                    }
+                }
+                return tempResArray;
+            }
+            else if (a instanceof Object && b instanceof Object) {
+                // тимчасовий контейнер для результату
+                var tempResObject = {};
+
+                switch (oper) {
+                    case '+': tempResObject.resultA = a['a'] + b['a'];
+                        tempResObject.resultB = a['b'] + b['b']; break;
+                    case '-': tempResObject.resultA = a['a'] - b['a'];
+                        tempResObject.resultB = a['b'] - b['b']; break;
+                    case '*': tempResObject.resultA = a['a'] * b['a'];
+                        tempResObject.resultB = a['b'] * b['b']; break;
+                    case '/': if (b['a'] == 0 || b['b'] == 0) {
+                        return alert('Ділити на нуль не можна');
+                    } else {
+                        tempResObject.resultA = a['a'] / b['a'];
+                        tempResObject.resultB = a['b'] / b['b'];
+                    }; break;
+                    default: alert('Ви ввели неправильний арифметичний знак!'); break;
+                }
+                return tempResObject;
+            }
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>

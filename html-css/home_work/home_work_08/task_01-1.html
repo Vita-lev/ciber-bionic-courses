@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 01</title>
+    <style>
+      .box__switch {
+        position: relative;
+        display: inline-block;
+        width: 75px;
+        height: 35px;
+        background-color: gray;
+        cursor: pointer;
+      }
+
+      .slider {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+
+        background-color: rgb(252, 250, 247);
+        top: 5px;
+        left: 5px;
+        transition: 1s;
+      }
+
+      .input:checked + .slider {
+        transform: translateX(40px);
+      }
+
+      .box__switch:has(.input:checked) {
+        background-color: rgb(54, 135, 4);
+      }
+
+      .input {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <label class="box__switch">
+      <input class="input" type="checkbox" />
+      <span class="slider"></span>
+    </label>
+  </body>
+</html>

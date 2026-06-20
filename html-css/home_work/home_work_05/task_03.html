@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0 17px;
+             font-size: 25px;
+        }
+
+        a {
+            text-decoration: none;
+            transition: 1s;
+        }
+
+        a.text--link {
+            text-decoration: underline;
+        }
+        a:hover {
+            color: aliceblue;
+        }
+        .menu {
+            display: flex;
+            align-items: center;
+            transition: 2s;
+            
+          
+
+            /* gap: 40px; */
+
+      
+
+            background-color: aqua;
+
+            margin-bottom: 30px;
+            
+        }
+
+        .link{
+            width: 120px;
+            height: 70px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: 1s;
+
+            
+
+        }
+
+      
+        .link:hover {
+           
+            background-color: brown;
+            color: aliceblue;
+        }
+
+        .title {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 30px;
+        }
+        .paginator {
+            display: flex;
+         padding: 20px;
+            align-items: center;
+
+            gap: 20px;
+           
+          
+
+            background-color: bisque;
+        }
+
+        .paginator--item {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+            background-color: rgb(246, 193, 193);
+            transition: 1s;
+
+           
+        }
+
+        .paginator--item:hover {
+            background-color: blueviolet;
+            color: aliceblue;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="menu">
+                <a class="link" href="#">Home</a>
+                <a class="link" href="#">Books</a>
+                <a class="link" href="#">Contacts</a>
+            </div>
+
+            <section class="hero">
+                <h2 class="title">Titile h2</h2>
+                <p class="text">Lorem  <a class="text--link" href="#">ipsum</a> dolor, sit amet consectetur adipisicing elit. Dolor, inventore.</p>
+                <div class="paginator">
+                    <a href="./task_01.html" class="paginator--item" target="_blank">1</a>
+                     <a href="./task_02.html" class="paginator--item" target="_blank">2</a>
+                      <a href="./task_03.html" class="paginator--item" target="_blank">3</a>
+                       <a href="./task_04.html" class="paginator--item" target="_blank">4</a>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

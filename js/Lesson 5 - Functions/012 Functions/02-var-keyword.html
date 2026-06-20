@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ключове слово var</title>
+</head>
+
+<body>
+    <script>
+        // Функція – представляє локальну область видимості. Змінна, створена функції через var, буде доступна у всій
+        // функції.
+        // При цьому блокова область видимості не працює для змінних, створених у такий спосіб.
+        function functionScopeTest() {
+            var a = "first";
+
+            if (a != "") {
+                var b = "second";
+                console.log("1 " + a);
+                console.log("1 " + b);
+            }
+
+            console.log("2 " + a);
+            console.log("2 " + b); // змінна доступна, оскільки була створена за допомогою var. Області видимості
+            // змінної є функція.
+        }
+
+        functionScopeTest();
+    </script>
+</body>
+
+</html>

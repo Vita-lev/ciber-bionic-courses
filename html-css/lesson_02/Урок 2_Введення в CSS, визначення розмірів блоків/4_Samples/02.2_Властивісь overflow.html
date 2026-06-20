@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Випадання з контентної частини елемента</title>
+    <!-- https://css.in.ua/css/property/overflow -->
+</head>
+<body>
+    <style>
+        .parent{
+            background: yellow;
+            /* Змініть значення ширини */
+            width: 200px;
+            height: 150px;
+            overflow: visible;
+            /* overflow: auto | hidden | scroll | visible */
+            overflow-y: auto;
+            overflow-x: hidden;
+
+
+        }
+        .child{
+            background: lightgreen;
+            height: 200px;
+            width: 300px;
+        }
+    </style>
+
+    <div class="parent">
+        Батько
+        <div class="child">
+            Дитина Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, praesentium inventore rerum voluptate minus tempora repudiandae accusantium magnam dolore voluptates neque ipsa assumenda earum repellendus explicabo placeat corrupti. Praesentium, sit!
+        </div>
+    </div>
+</body>
+</html>

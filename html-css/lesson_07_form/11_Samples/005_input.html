@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        input[type='range'] {
+
+        }
+    </style>
+</head>
+<body>
+    <h3>Елементи для роботи з датою та часом</h3>
+    <form>
+        <!-- 
+            Якщо елементу input не заданий атрибут type, або браузер не підтримує будь-яке значення атрибута type,
+            відображатиметься елемент як текстове поле.
+          -->
+        <p>
+            <label for="ld" >Місцева дата та час:</label>
+            <input type="datetime-local" id="ld" name="localdate" value="gggggg">
+        </p>
+        <p>
+            <label for="dt">Дата та час:</label>
+            <input type="datetime" id="dt" name="datetime">
+        </p>
+        <p>
+            <label for="d">Дата:</label>
+            <input type="date" id="d" name="date">
+        </p>
+        <p>
+            <label for="t">Час:</label>
+            <input type="time" id="t" name="time">
+        </p>
+        <p>
+            <label for="m">Місяць:</label>
+            <input type="month" id="m" name="month">
+        </p>
+        <p>
+            <label for="w">Поточний тиждень:</label>
+            <input type="week" id="w" name="week">
+        </p>        
+    </form>
+    <br />
+
+    <h3>Елементи для введення чисел та повзунок</h3>
+    <form>
+        <p>
+            <!-- 
+                input з типом number дозволяє вводити числа. s
+                Має такі атрибути:
+                    - min – мінімально допустиме значення.
+                    - max – максимально допустиме значення.
+                    - readonly – доступне тільки для читання.
+                    - required - вказує, що це поле обов'язково має мати значення.
+                    - step - значення, на яке збільшуватиметься число в полі.
+                    - value - значення за промовчанням.
+              -->
+            <label for="number">Поле для введення чисел:</label>
+            <input type="number" min="10" max="15" step="5" value="15" id="number">
+        </p>
+        <p>
+            <input type="text" list="price">
+            <datalist id="price">
+                <option value="10">десять</option>
+                <option value="100">
+                <option value="1000">
+                <option value="10000" />
+                <option value="111111" />
+            </datalist>
+        </p>
+        <p>
+            <label for="slider">Повзунок</label>
+            <input type="range" step="1" min="0" max="100" id="slider" name="slider">
+        </p>
+
+        <button type="">show</button>
+    </form>
+    <br>
+
+    <h3>Елементи для введення кольору, телефону, поштової адреси та веб-адреси</h3>
+    <form>
+        <p>
+            <label for="favcolor">Колір:</label>
+            <input type="color" id="favcolor" name="favcolor">
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" placeholder="user@gmail.com" id="email" name="email">
+        </p>
+        <p>
+            <label for="url">URL:</label>
+            <input type="url" autocomplete='on' id="url" name="url">
+        </p>
+        <p>
+            <label for="phone">Телефон:</label>
+            <input type="tel" placeholder="(XXX)-XXX-XXXX" id="phone" name="phone">
+        </p>
+
+        <input type="submit">
+    </form>
+    <br>
+    
+    <br>
+
+    <script>
+  
+    </script>
+</body>
+<script>
+    let slider = document.querySelector('#slider');
+    let res = document.querySelector('#res');
+    let favcolor = document.querySelector('#favcolor')
+
+
+</script>
+</html>

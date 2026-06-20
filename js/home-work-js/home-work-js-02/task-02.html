@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Завдання 2. Простий калькулятор</title>
+  </head>
+
+  <body>
+    <script>
+      let inputX = prompt("Введіть перший доданок", 0);
+      let inputY = prompt("Введіть другий доданок", 0);
+
+      let x = Number(inputX);
+      let y = Number(inputY);
+
+      let sum = x + y;
+      let sum1 = x - y;
+      let sum2 = x * y;
+      let sum3 = x / y;
+      // let sum = inputX + inputY;
+
+      alert(`${x} + ${y} = ${sum}
+            ${x} - ${y} = ${sum1}
+            ${x} * ${y} = ${sum2}
+            ${x} / ${y} = ${sum3}
+            `);
+    </script>
+  </body>
+</html>

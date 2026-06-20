@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task X</title>
+  </head>
+  <body>
+    <pre>
+        Завдання:
+        Запитайте у користувача число. Виведіть усі числа в обраному одязі від введеного користувачем значення до 1.
+        Використовуйте для вирішення рекурсію.
+    </pre>
+    <script>
+      let number = Number(prompt("Введіть число:"));
+
+      function printNumbers(n) {
+        if (n < 1) {
+          return;
+        }
+
+        console.log(n);
+
+        printNumbers(n - 1);
+      }
+
+      printNumbers(number);
+    </script>
+  </body>
+</html>

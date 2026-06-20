@@ -1,0 +1,189 @@
+```html
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Хто хоче стати мільйонером?</title>
+  </head>
+  <body>
+    <script>
+      const questions = [
+        {
+          question: "Скільки буде 4 * 5?",
+          options: { a: "10", b: "20", c: "25", d: "35" },
+          correct: "b",
+          prize: 500,
+        },
+        {
+          question: "Столиця України?",
+          options: { a: "Львів", b: "Одеса", c: "Київ", d: "Харків" },
+          correct: "c",
+          prize: 1000,
+        },
+        {
+          question: "Скільки днів у тижні?",
+          options: { a: "5", b: "6", c: "7", d: "8" },
+          correct: "c",
+          prize: 2000,
+        },
+        {
+          question: "Яка планета найближча до Сонця?",
+          options: { a: "Марс", b: "Меркурій", c: "Венера", d: "Юпітер" },
+          correct: "b",
+          prize: 5000,
+        },
+        {
+          question: "Скільки буде 9 + 8?",
+          options: { a: "17", b: "18", c: "19", d: "20" },
+          correct: "a",
+          prize: 10000,
+        },
+        {
+          question: "Яка мова використовується для стилізації сторінок?",
+          options: { a: "HTML", b: "CSS", c: "Java", d: "Python" },
+          correct: "b",
+          prize: 20000,
+        },
+        {
+          question: "Який океан найбільший?",
+          options: {
+            a: "Індійський",
+            b: "Атлантичний",
+            c: "Тихий",
+            d: "Північний Льодовитий",
+          },
+          correct: "c",
+          prize: 40000,
+        },
+        {
+          question: "Скільки буде 12 * 12?",
+          options: { a: "124", b: "142", c: "144", d: "154" },
+          correct: "c",
+          prize: 80000,
+        },
+        {
+          question: "Яка тварина є символом Австралії?",
+          options: { a: "Кенгуру", b: "Лев", c: "Тигр", d: "Панда" },
+          correct: "a",
+          prize: 125000,
+        },
+        {
+          question: "Що означає JS?",
+          options: {
+            a: "JavaSimple",
+            b: "JavaScript",
+            c: "JSON Script",
+            d: "Just Script",
+          },
+          correct: "b",
+          prize: 250000,
+        },
+        {
+          question: "Скільки континентів на Землі?",
+          options: { a: "5", b: "6", c: "7", d: "8" },
+          correct: "c",
+          prize: 500000,
+        },
+        {
+          question: "Який елемент має символ O?",
+          options: {
+            a: "Кисень",
+            b: "Водень",
+            c: "Азот",
+            d: "Золото",
+          },
+          correct: "a",
+          prize: 750000,
+        },
+        {
+          question: "Хто написав 'Кобзар'?",
+          options: {
+            a: "Іван Франко",
+            b: "Леся Українка",
+            c: "Тарас Шевченко",
+            d: "Михайло Коцюбинський",
+          },
+          correct: "c",
+          prize: 900000,
+        },
+        {
+          question: "Який оператор строгого порівняння в JavaScript?",
+          options: {
+            a: "=",
+            b: "==",
+            c: "===",
+            d: "!=",
+          },
+          correct: "c",
+          prize: 950000,
+        },
+        {
+          question: "Скільки бітів в одному байті?",
+          options: {
+            a: "4",
+            b: "8",
+            c: "16",
+            d: "32",
+          },
+          correct: "b",
+          prize: 1000000,
+        },
+      ];
+
+      let total = 0;
+
+      alert("Ласкаво просимо до гри 'Хто хоче стати мільйонером?'");
+
+      for (let i = 0; i < questions.length; i++) {
+        const q = questions[i];
+
+        let answer = prompt(
+          `${i + 1}. ${q.question}\n\n` +
+            `a) ${q.options.a}\n` +
+            `b) ${q.options.b}\n` +
+            `c) ${q.options.c}\n` +
+            `d) ${q.options.d}\n\n` +
+            `Введіть a, b, c або d`,
+        );
+
+        if (answer === null) {
+          alert(`Гру завершено.\nВаш виграш: ${total} грн`);
+          break;
+        }
+
+        answer = answer.toLowerCase().trim();
+
+        if (answer === q.correct) {
+          total = q.prize;
+
+          if (i === questions.length - 1) {
+            alert(
+              `🎉 Вітаємо! Ви стали мільйонером!\nВаш виграш: ${total} грн`,
+            );
+            break;
+          }
+
+          let next = confirm(
+            `✅ Правильна відповідь!\n\n` +
+              `Ваш поточний виграш: ${total} грн\n\n` +
+              `Продовжити гру?`,
+          );
+
+          if (!next) {
+            alert(`Гру завершено.\nВаш виграш: ${total} грн`);
+            break;
+          }
+        } else {
+          alert(
+            `❌ Неправильна відповідь!\n\n` +
+              `Правильна відповідь: ${q.correct}\n` +
+              `Ваш виграш: ${total} грн`,
+          );
+
+          break;
+        }
+      }
+    </script>
+  </body>
+</html>
+```

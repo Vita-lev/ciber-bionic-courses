@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!-- Для створення опису полів використовують елементи label. Мітка зв'язується з полем атрибутом id. -->
+    <form method="get" action="" >
+        <!-- атрибут accesskey дозволяє встановити комбінацію гарячих клавіш, натиснувши на які поле стає активним,
+        тобто отримує фокус.-->
+        <p>
+            <label for="login" accesskey="l">Логін: </label>
+            <input type="text" name="user-login" id="login" />
+
+            <label for="jjjj" accesskey="ggg">mmmmm</label>
+            <input type="text" id="jjjj">
+        </p>
+
+        <p>
+            <label>Пароль: 
+                <input type="password" name="pass" id="pass1" />
+            </label> 
+        </p>
+
+        <!-- 
+            input з типом submit надсилає дані на сторінку, вказану в атрибуті action тегу form.
+            input з типом reset скидає значення всіх елементів форми у початковий стан.
+          -->
+        <p>
+            <input type="reset" value="Скинути" />
+            <input type="submit" value="Надіслати" />
+        </p>
+    </form>
+
+    <input type="reset" value="Скинути" />
+            <input type="submit" value="Надіслати" />
+</body>
+</html>

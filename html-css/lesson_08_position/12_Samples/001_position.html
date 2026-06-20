@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        h1{
+            border: 1px solid black;
+        }
+        .outer{
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            position: relative;
+            left: 200px;
+            top: 150px;
+            overflow: hidden;
+
+        }
+
+        .inner{
+            position: absolute;
+            top:-60px;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- За замовчуванням усі елементи мають статичне позиціонування, тобто відображаються у норальному порядку у
+    потоці виводу. -->
+    <h1>Позиціювання</h1>
+    <div class="outer">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio vitae nesciunt obcaecati eius animi dolores, quos illo soluta deserunt quisquam necessitatibus aut nulla autem error, quae perspiciatis iusto voluptas tenetur exercitationem alias incidunt cupiditate tempore fugiat. Illum dolore expedita sequi cumque doloribus asperiores officiis voluptates eos quidem ex. Architecto adipisci obcaecati saepe incidunt, vitae numquam inventore cupiditate asperiores totam atque reiciendis corporis, autem, expedita nobis. Ipsa nesciunt sequi, aliquid tempore voluptatum minus error quis, repellat modi odit cupiditate fuga numquam? Cupiditate labore voluptate porro alias nesciunt enim doloribus dolore minus architecto distinctio tempora omnis, quaerat iste cumque quo. Excepturi, placeat!
+        <div class="inner"></div>
+    </div>
+
+    <div style="width: 300px; height: 200px; background-color: red;">
+
+    </div>
+</body>
+</html>

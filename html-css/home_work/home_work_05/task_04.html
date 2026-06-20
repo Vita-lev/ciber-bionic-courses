@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 04</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: antiquewhite;
+        }
+        .foto {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background-image: url(./images/cat\ 15.00.05.jpg) ;
+            background-size: cover ;
+            border: 4px solid blue;
+            background-position: center;
+            transition: 1s;
+        }
+
+        .foto:hover {
+            transform: scale(1.2);
+            border: 5px solid rgb(0, 255, 128);
+            padding: 20px;
+            box-shadow: 5px 5px 15px gray;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="foto"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логічне І (&&)</title>
+</head>
+
+<body>
+    <script>
+        // Приклад використання логічного оператора І (кон'юнкція)
+        let login = "admin";
+        let password = "12345";
+
+        let inputLogin = prompt("Введіть логін");
+        let inputPassword = prompt("Введіть пароль");
+
+        // Якщо логін І пароль введені правильно, цей користувач - авторизований
+        if (inputLogin == login && inputPassword == password) {
+            alert("Вас авторизовано!");
+        }
+        else {
+            alert("Логін або пароль введені неправильно");
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,482 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    color: #101010;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.shadow {
+    box-shadow: 0 6px 10px 3px rgba(0, 0, 0, 0.15);
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    border: 1px solid black;
+}
+
+.section {
+    padding-top: 150px;
+}
+
+/* Header START */
+
+.header {
+    padding-top: 30px;
+    padding-bottom: 11px;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 84px;
+    margin-top: 10px;
+
+    /* padding-bottom: 11px; */
+}
+
+.header__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.header__logo {
+    font-family: "Pacifico", cursive;
+    font-size: 48px;
+    font-weight: 400;
+    color: #A52424;
+}
+
+.header__img {
+    width: 109px;
+    height: auto;
+    display: block;
+}
+
+.header__link {
+
+    color: #101010;
+}
+
+.header__phone {
+    color: #A52424;
+}
+
+.text__body {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+}
+
+/* Header END */
+/* Hero START */
+.hero {}
+
+.hero__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+
+}
+
+.hero__content {
+    max-width: 443px;
+    padding-top: 109px;
+}
+
+.hero__img {
+    max-width: 674px;
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    font-weight: 500;
+    font-size: 18px;
+    color: #A52424;
+    border: 1px solid #A52424;
+    padding-block: 20px;
+    display: inline-block;
+}
+
+.hero__btn {
+    padding-inline: 40px;
+}
+
+.hero__inner {
+    display: flex;
+    justify-content: space-between;
+
+    /* padding-top: 109px; */
+}
+
+.hero__title {
+    font-weight: 700;
+    font-size: 72px;
+    letter-spacing: 0.1em;
+
+    margin-bottom: 20px;
+}
+
+.hero__subtitle {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+
+    color: #101010;
+    margin-bottom: 60px;
+}
+
+
+.about {}
+
+.about__title {}
+
+.section-title {
+    font-weight: 700;
+    font-size: 64px;
+    letter-spacing: 0.05em;
+    color: #232323;
+}
+
+.about__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__card {
+    width: 344px;
+    height: 561px;
+
+    margin-top: 46px;
+
+    padding-top: 50px;
+    padding-left: 99px;
+}
+
+.about__content {
+    max-width: 674px;
+
+}
+
+.about__name,
+.about__subtitle {
+    color: #A52424;
+}
+
+.about__card img {
+    width: 278px;
+    margin-bottom: 50px;
+}
+
+.about__subtitle {
+    margin-bottom: 21px;
+}
+
+.about__text--top {
+    margin-bottom: 20px;
+}
+
+.about__text--bottom {
+    margin-bottom: 7px;
+}
+
+.about__text {
+    color: #232323;
+}
+
+.about__image-wrapper {
+    height: 330px;
+    position: relative;
+}
+
+.about__image,
+.about__decor {
+    position: absolute;
+}
+
+.about__decor {
+    height: 330px;
+    width: 567px;
+
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.about__image {
+    width: 642px;
+    left: 0;
+    top: 31px;
+    z-index: 2;
+}
+
+.portfolio {}
+
+.portfolio__title {
+    margin-bottom: 50px;
+}
+
+.portfolio__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio-card__image {
+
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.portfolio-card {
+    max-width: 376px;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-card__title {
+    color: #101010;
+    margin-bottom: 10px;
+}
+
+.portfolio-card__text {
+    color: #101010;
+    margin-bottom: 20px;
+}
+
+.portfolio-card__btn {
+    margin-top: auto;
+    align-self: flex-start;
+
+
+    padding-inline: 60px;
+}
+
+/* pricing start */
+
+.pricing {}
+
+.pricing__container {}
+
+.pricing__title {
+    margin-bottom: 50px;
+}
+
+.pricing__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pricing__card {
+    width: 509px;
+}
+
+.pricing__img {
+    width: 290px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.pricing__shadow {
+    margin-top: 100px;
+}
+
+.pricing__subtitle {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #A52424;
+}
+
+.pricing__list {
+    width: 429px;
+    margin: 0 auto;
+
+    margin-bottom: 25px;
+}
+
+.pricing__list-groupe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pricing__list-groupe {
+    margin-bottom: 10px;
+}
+
+.pricing__btn {
+    padding: 20px 60px;
+    margin-bottom: 25px;
+}
+
+.pricing__price {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: auto;
+    color: #A52424;
+}
+
+/* pricing end */
+/* booking start */
+
+.booking__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.booking__img-1 {
+    position: relative;
+    display: block;
+    width: 285px;
+    height: 492px;
+}
+
+.booking__img-2 {
+    width: 329px;
+    height: 585px;
+    display: block;
+    position: absolute;
+    left: 250px;
+    top: -42px;
+}
+
+.booking__form {
+    max-width: 476px;
+}
+
+.booking__title {
+    margin-bottom: 100px;
+}
+
+.booking__group {
+    position: relative;
+}
+
+.booking-margin {
+    margin-bottom: 146px;
+}
+
+.form {
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #;
+}
+
+.booking__btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* booking end */
+/* footer start */
+
+.footer {
+    padding-top: 100px;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 190px;
+    height: 157px;
+}
+
+.footer__logo {
+    font-family: "Pacifico", cursive;
+    font-size: 48px;
+    font-weight: 700;
+    color: #A52424;
+    letter-spacing: 5%;
+}
+
+@media (max-width: 600px) {
+    .booking__inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pricing__inner {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1050px) {
+    .portfolio__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .pricing__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .booking__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+}

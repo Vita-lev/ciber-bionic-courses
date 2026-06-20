@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header__container">
+          <a class="header__logo" href="#"
+            ><img class="header__img" src="./images/logo.svg" alt="logo"
+          /></a>
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li class="header__item">
+                <a class="header__link text__body" href="#about">Обо мне</a>
+              </li>
+              <li class="header__item">
+                <a class="header__link text__body" href="#portfolio"
+                  >Портфолио</a
+                >
+              </li>
+              <li class="header__item">
+                <a class="header__link text__body" href="#pricing">Цены</a>
+              </li>
+              <li class="header__item">
+                <a class="header__link text__body" href="#booking"
+                  >Записаться</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <a
+            class="header__phone text__body"
+            href="tel:+380961195404"
+            text__body
+            >+38 (096) 119-54-04</a
+          >
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="hero">
+          <div class="container hero__container">
+            <div class="hero__inner">
+              <div class="hero__content">
+                <h1 class="hero__title">Юлия Тюлькина</h1>
+                <p class="hero__subtitle">фотограф / видеооператор</p>
+                <a href="#booking" class="hero__btn btn"
+                  >Записаться на фотоссесию</a
+                >
+              </div>
+              <img class="hero__img" src="./images/hero-img.jpg" alt="" />
+            </div>
+          </div>
+        </section>
+
+        <section class="about section" id="about">
+          <div class="container about__container">
+            <h2 class="about__title section-title">Обо мне</h2>
+            <div class="about__inner">
+              <div class="about__card shadow">
+                <img class="" src="./images/about-img-1.jpg" alt="" />
+                <h3 class="text__subtitle about__name">Юлия Тюлькина</h3>
+              </div>
+              <div class="about__content">
+                <h3 class="about__subtitle text__subtitle">
+                  Привет! Меня зовут Юля, я фотограф из Винницы
+                </h3>
+                <p class="about__text about__text--top text__body">
+                  Занимаюсь фотографией более 2 лет. Люблю живые, естественные,
+                  теплые и эмоциональные кадры. Умею работать с такими
+                  инструментами как Photoshop, Lightroom.
+                </p>
+
+                <p class="about__text about__text--bottom text__body">
+                  Фотография для меня - это способ показать прекрасное в
+                  простоте,<br />
+                   то есть открыть занавес изящного и ненавязчивого. Видеосъёмка
+                  является чем-то по особенному ценным, ведь можно запечатлеть
+                  момент навсегда и при этом оставить отпечаток в истории.
+                </p>
+                <div class="about__image-wrapper">
+                  <div class="about__decor shadow"></div>
+                  <img
+                    class="about__image"
+                    src="./images/about-img-2.jpg"
+                    alt="fotograf"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="portfolio section" id="portfolio">
+          <div class="container portfolio__container">
+            <h2 class="section-title portfolio__title">Портфолио</h2>
+            <div class="portfolio__list">
+              <article class="portfolio-card">
+                <img
+                  class="portfolio-card__image"
+                  src="./images/portfolio-img-1.jpg"
+                  alt=""
+                />
+                <h3 class="portfolio-card__title text__subtitle">
+                  Теплые фото у дома
+                </h3>
+                <p class="portfolio-card__text text__body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <a class="portfolio-card__btn btn" href="#">Все фото</a>
+              </article>
+              <article class="portfolio-card">
+                <img
+                  class="portfolio-card__image"
+                  src="./images/portfolio-img-2.jpg"
+                  alt=""
+                />
+                <h3 class="portfolio-card__title text__subtitle">
+                  Утреняя видеосьемка
+                </h3>
+                <p class="portfolio-card__text text__body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer sagittis, natoque amet at hendrerit consectetur
+                  rhoncus.
+                </p>
+                <a class="portfolio-card__btn btn" href="#">Все фото</a>
+              </article>
+              <article class="portfolio-card">
+                <img
+                  class="portfolio-card__image"
+                  src="./images/portfolio-img-3.jpg"
+                  alt=""
+                />
+                <h3 class="portfolio-card__title text__subtitle">
+                  Фотосессия с цветами
+                </h3>
+                <p class="portfolio-card__text text__body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer sagittis, natoque amet.
+                </p>
+                <a class="portfolio-card__btn btn" href="#">Все фото</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="pricing section" id="pricing">
+          <div class="container pricing__container">
+            <div class="pricing__title section-title">Цены</div>
+            <div class="pricing__inner">
+              <div class="pricing__card shadow">
+                <div class="pricing__shadow shadow">
+                  <img
+                    class="pricing__img"
+                    src="./images/pricing-img-1.jpg"
+                    alt=""
+                  />
+                  <h3 class="pricing__subtitle text__subtitle">Фотосессия</h3>
+                  <div class="pricing__list">
+                    <div class="pricing__list-groupe">
+                      <p>Продолжительность</p>
+                      <p>1 час</p>
+                    </div>
+                    <div class="pricing__list-groupe">
+                      <p>Время обработки фото</p>
+                      <p>5 дней</p>
+                    </div>
+                    <div class="pricing__list-groupe">
+                      <p>Количество фото</p>
+                      <p>20 штук</p>
+                    </div>
+                  </div>
+                  <div class="pricing__list">
+                    <div class="pricing__list-groupe">
+                      <p class="pricing__price">200 грн</p>
+                      <a href="#" class="pricing__btn btn">1 час</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <div class="pricing__card shadow">
+                <div class="pricing__shadow shadow">
+                  <img
+                    class="pricing__img"
+                    src="./images/pricing-img-1.jpg"
+                    alt=""
+                  />
+                  <h3 class="pricing__subtitle text__subtitle">Фотосессия</h3>
+                  <div class="pricing__list">
+                    <div class="pricing__list-groupe">
+                      <p>Продолжительность</p>
+                      <p>1 час</p>
+                    </div>
+                    <div class="pricing__list-groupe">
+                      <p>Время обработки фото</p>
+                      <p>5 дней</p>
+                    </div>
+                    <div class="pricing__list-groupe">
+                      <p>Количество фото</p>
+                      <p>20 штук</p>
+                    </div>
+                  </div>
+                  <div class="pricing__list">
+                    <div class="pricing__list-groupe">
+                      <p class="pricing__price">200 грн</p>
+                      <a href="#" class="pricing__btn btn">1 час</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section class="booking section" id="booking">
+          <div class="container">
+            <h3 class="section-title booking__title">Записаться к Юле</h3>
+            <div class="booking__inner">
+              <div class="booking__group">
+                <img
+                  class="booking__img-1 booking-margin"
+                  src="./images/booking-img-1.jpg"
+                  alt=""
+                />
+                <img
+                  class="booking__img-2"
+                  src="./images/booking-img-2.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="booking__form">
+                <form action="">
+                  <input class="input" type="name" placeholder="Имя ..." />
+                   <input class="input" type="email" placeholder="E-mail ..." />
+                   <textarea class="input" name="" id="" rows="6" placeholder="Сообщение ..."></textarea>
+                   <a class="booking__btn btn" href="#">Отправить</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__container">
+            <a class="footer__logo" href="#">Julia</a>
+            <div class="footer__content">
+                <a href="https://www.instagram.com/"><img src="./images/instagram.png" alt="" width="30"></a>
+                 <a href="#"><img src="./images/facebook.png" alt="" width="30"></a>
+                  <a href="#"><img src="./images/email.png" alt="" width="30"></a>
+            </div>
+             <a
+            class="header__phone text__body"
+            href="tel:+380961195404"
+            text__body
+            >+38 (096) 119-54-04</a
+          >
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

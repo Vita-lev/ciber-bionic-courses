@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 02</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(197, 199, 199);
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 100%;
+            color: rgb(35, 12, 12);
+            padding: 40px;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgb(254, 254, 254);
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 90%;
+            max-width: 800px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .title {
+            text-align: left;
+             margin-bottom: 20px;
+             text-transform: uppercase;
+             color: grey;
+             font-size: 35px;
+        }
+
+        .btn {
+        padding: 20px 15px;
+        background-color: rgb(222, 75, 59);
+        color: white;
+        cursor: pointer;
+        border: none;
+        text-transform: uppercase;
+        border-radius: 5px;
+        font-size: 15px;
+        width: 100%;
+        }
+
+        .btn:hover {
+        background-color: rgb(144, 8, 28);
+        color: white;
+        }
+
+        .btn:active {
+        background-color: rgb(97, 3, 23);
+        color: rgb(247, 48, 48);
+        }
+
+        .input {
+        padding: 20px;
+        font-size: 14px;
+        min-width: 150px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        background-color: rgb(230, 230, 230);
+        }
+
+        .input-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        }
+
+        .input-half {
+            flex: 1 1 40%;
+        }
+
+        .input-full {
+            width: 100%;
+        }
+
+        .textarea {
+            width: 100%;
+            color: gray;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+ @media(max-width:600px) {
+    .wrapper {
+        padding: 40px;
+    }
+    .input-group {
+        flex-direction: row;
+    }
+
+    .input-half {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    .form {
+        padding: 20px 0;
+    }
+    .title {
+        font-size: 24px;
+    }
+ }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <form class="form" action="#" method="post" name="form01" enctype="form01" id="form01">
+                <h2 class="title">get in touch</h2>
+                  
+                 <div class="input-group">
+                    <input class="input input-half" type="text" id="name" name="name" placeholder="Name" required>
+                    <input class="input input-half" type="email" id="mail" name="mail" placeholder="Your Mail" required>
+                    </div>
+                    <textarea class="textarea input" name="message" rows="8" placeholder="Type your message"></textarea>
+               
+                    
+            <button type="submit" class="btn">send message</button>
+           
+            </form>
+        </div>
+    </div>
+</body>
+</html>

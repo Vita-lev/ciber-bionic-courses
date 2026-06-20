@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(232, 250, 233);
+        }
+        .wrapper {
+            background-color: rgb(254, 239, 222);
+
+        }
+        .container {
+          width: 80%;
+          max-width: 1200px;
+
+          margin: 0 auto;
+        }
+        .ordered {
+            background-color: rgb(226, 226, 249);
+            list-style: none;
+            width: 100%;
+            padding: 10px; 
+      
+            
+        }
+        .list {
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+           
+        }
+        .list:nth-child(2n) {
+            background-color: rgb(188, 187, 187);
+        }
+
+        .list:hover {
+            background-color: rgb(217, 190, 243);
+        }
+
+        .list:active {
+            background-color: rgb(247, 195, 195);
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <ul class="ordered">
+            <li class="list">Lorem, ipsum.</li>
+            <li class="list">Lorem ipsum dolor sit amet.</li>
+            <li class="list">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur repellendus atque earum provident facere, quo libero vero, velit ab delectus magni sint harum, optio recusandae impedit error. Quaerat, excepturi dolore.</li>
+            <li class="list">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, eaque.</li>
+            <li class="list">Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li class="list">Lorem ipsum dolor sit amet.</li>
+        </ul>
+    </div>
+</div>
+    
+</body>
+</html>

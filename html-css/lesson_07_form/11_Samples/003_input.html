@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--  
+        Прапорець є елементом, який може перебувати в одному з двох станів: зазначеному і невідзначеному.
+      -->
+    <form method="get" action="">
+        <h3>Виберіть курси, які бажаєте пройти:</h3>
+        <p>            
+            <!-- Атрибут checked дозволяє встановити прапорець у зазначений стан. -->
+            <input type="checkbox" checked name="html5" value="ggggg"/>
+            <label>HTML5&amp;CSS3</label>
+        </p>
+        <p>
+            <input type="checkbox" checked name="bootstrap" value="gggggg"/>
+            <label>Bootstrap 4</label>
+        </p>
+        <p>
+            <input type="checkbox" name="js" value="ggg"/>
+            <label>JavaScript</label>
+        </p>
+        <p>
+            <input type="checkbox" name="angular2" />
+            <label>Angular2</label>
+        </p>
+
+        <h3>Оберіть зручний для Вас час:</h3>
+        <p>
+            <input type="radio" name="time" checked value="morning" />
+            <label>9:00 - 11:00</label>
+        </p>
+        <p>
+            <input type="radio" name="time" value="dinner" />
+            <label>11:30 - 13:30</label>
+        </p>
+        <p>
+            <input type="radio" name="time" value="evening" />
+            <label>19:00 - 21:00</label>
+        </p>
+
+        <p>
+            <!-- Кнопку надсилання можна створити двома способами -->
+            <button type="submit">Надіслати дані</button>
+            <input type="submit" value="send">
+        </p>
+    </form>
+</body>
+</html>

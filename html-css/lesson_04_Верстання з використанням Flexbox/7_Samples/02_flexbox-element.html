@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            background: lightgreen;
+            padding: 10px;
+            display: flex;
+            height: 400px;
+        }
+        /* флекс елементи приймають автоматично висоту батьківського елемента */
+        .item{
+            border: 1px solid black;
+            padding: 5px;
+            background: orange;
+        }
+    </style>
+    <div class="container">
+        <span class="item">item</span>
+        <b class="item">element</b>
+        <div class="item">element item</div>
+        <div class="item">div element item</div>
+    </div>
+</body>
+</html>

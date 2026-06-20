@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <pre>
+        Завдання:
+        Запитайте у користувача число, порахуйте суму всіх чисел між 0 та введеним значенням та відобразіть результат
+        на екрані.
+    </pre>
+    <script>
+      let number = Number(prompt("Введіть число"));
+      let sum = 0;
+
+      for (let i = 0; i <= number; i++) {
+        sum += i;
+      }
+      alert(`Сума чисел від 0 до ${number} = ${sum}`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson_09</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrapper {
+            min-height: 100vh;
+        }
+        body {
+              color: #774E2E;
+              font-family: "Montserrat", sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: #774E2E;
+        }
+        .orange {
+            color: #F37F34;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 1170px;
+            padding: 0 17px;
+        }
+        .header {
+            width: 100%;
+            padding-top: 30px;
+        }
+        .header__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .header__nav {
+            display: flex;
+            gap: 24px;  
+        }
+
+        .hero{
+            padding-top: 100px;
+            padding-bottom: 150px;
+        }
+        .hero__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .hero__img {
+            max-width: 575px;
+            height: auto;
+            width: 100%;
+        }
+        .h1 {
+            font-size: 110px;
+            text-transform: uppercase;
+            width: 469px;
+            margin-bottom: 40px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            line-height: 100%;
+        }
+        .btn {
+            padding: 25px 40px;
+            background-color: #774E2E;
+            max-width: 345px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            transition: 1s;
+        }
+        .btn:hover {
+            background-color: #F37F34;
+            color: #774E2E;
+        }
+
+        .btn:active {
+        background-color: #4b311d;
+        color: white;
+        }
+
+        .text {
+            max-width: 575px;
+            margin-bottom: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: 0.01em;
+        }
+        .candy {
+            background-color: #FFF9EA;
+            padding: 150px 0;
+        }
+        .h2 {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 70px;
+            line-height: 110%;
+            letter-spacing: 0.01em;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .candy__group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .candy__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: white;
+            min-height: 463px;
+            max-width: 370px;
+            padding: 20px;
+        }
+        .candy__h3 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 130%;
+            letter-spacing: 0.01em;
+            margin-bottom: 15px;
+        }
+        .candy__text {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: 0.01em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .candy__img,
+        .yummy__img{
+            max-width: 575px;
+            width: 100%;
+            height: auto;
+        }
+        .yummy {
+            padding: 150px 0;
+        }
+        .yummy__container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        .yummy__h2 {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .yummy__text {
+            margin-bottom: 60px;
+        }
+        .yummy__h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 130%;
+            letter-spacing: 0.01em;
+        }
+        .yummy__list {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: 0.01em;
+            padding-left: 20px;
+        }
+        .footer {
+            padding: 40px 0;
+            background-color: #774E2E;
+        }
+        .footer__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           
+        }
+        .footer__text {
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 130%;
+            letter-spacing: 0.01em;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container header__container">
+                <a href="#"><img src="./images/logo.svg" alt="logo"></a>
+                <div class="header__nav">
+                    <a href="#p1">Порада від Ямі</a>
+                    <a href="#p2">Мої улюбленній солодощі</a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="hero">
+                <div class="container hero__container">
+                    <div class="content__group">
+                        <h1 class="h1"><span class="orange">yummy </span>pug</h1>
+                        <p class="text">Всім привіт, я Ямі і я мопс, який дуже сильно полюбляє солодощі.
+                             Сьогодні я розкажу вам, чому саме солодощі і чому вони так важливі в нашому
+                              житті. Доречі, моє імʼя з англійської мови перекладається як “Смачний”.</p>
+                              <button class="btn">Мої улюбленні солодощі</button>
+                    </div>
+                    <img class="hero__img" src="./images/hero-img.jpg" alt="">
+                </div>
+            </section>
+            <section id="p2" class ="candy">
+                <div class="container candy__container">
+                    <h2 class="h2"><span class="orange">мої улюбленні</span> солодощі</h2>
+                    <div class="candy__group">
+                        <div class="candy__item">
+                            <img class="candy__img" src="./images/candy-01.jpg" alt="candy1">
+                            <h3 class="candy__h3">Червоний мак</h3>
+                            <p class="candy__text">Пралене з додаванням карамельної крихти, пасти ядер горіхів фундука та мигдалюпокрите шоколадною глазурʼю</p>
+                        </div>
+                        <div class="candy__item">
+                            <img class="candy__img" src="./images/candy-02.jpg" alt="candy2">
+                            <h3 class="candy__h3">Сливки-ленивки</h3>
+                            <p class="candy__text">Світлі вафельні листи, поєднані молочно-вершковою начинкою та покриті глазур’ю.</p>
+                        </div>
+                        <div class="candy__item">
+                            <img class="candy__img" src="./images/candy-03.jpg" alt="candy3">
+                            <h3 class="candy__h3">Ліщина</h3>
+                            <p class="candy__text">Праліне з додаванням подрібненої та тертої ліщини та мигдалю, покрите шоколадною глазур’ю.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="p1" class="yummy">
+                <div class="yummy__container container">
+                    <div class="content__group">
+                        <h2 class="h2 yummy__h2"><span class="orange">Порада – </span>від Yummy</h2>
+                        <p class="text yummy__text">З'ївши чергову шоколадку, ви не просто набираєте трохи додаткових калорій, але покращуєте тим самим роботу мозку, настрій і стаєте трішки добрішим. Вирішивши поласувати шоколадкою, віддавайте перевагу саме чорному шоколаду з високим вмістом какао-бобів. У цьому вигляді шоколаду менше жиру і цукру, ніж в молочному шоколаді, але зате магнію, кальцію, заліза, білка, антиоксидантів і вітамінів предостатньо.</p>
+                        <h3 class="yummy__h3">Солодощі, які радить їсти Ямі:</h3>
+                              <ul class="yummy__list">
+                                <li>Чорний шоколад</li>
+                                <li>Зефір</li>
+                                <li>Пастила</li>
+                                <li>Мармелад</li>
+                                <li>Мед</li>
+                                <li>Халва</li>
+                                <li>Цукати</li>
+                              </ul>
+                    </div>
+                    <img class="yummy__img" src="./images/dog.jpg" alt="">
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container footer__container">
+                <a href="#"><img src="./images/logo.svg" alt="logo"></a>
+                <p class="footer__text">Приєднуйся і живи зі мною у світі солодощів!</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

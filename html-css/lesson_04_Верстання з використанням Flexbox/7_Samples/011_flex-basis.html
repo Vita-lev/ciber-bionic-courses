@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-basis</title>
+</head>
+<body>
+    <style>
+        .container{
+            background: aqua;
+            max-width: 1000px;
+            font-size: 25px;
+            text-align: center;
+            height: 500px;
+            /* height: 1200px; */
+            margin: 50px auto;
+            display: flex;
+            flex-direction: row;
+            /* flex-direction: column; */
+        }
+        .item{
+            box-sizing: border-box;
+            border: 1px solid #000;
+            padding: 10px;
+            background: #ddd;
+            flex-basis: 200px;
+        }
+        .two{
+            flex-basis: 400px;
+            background: blue;
+        }
+        .three{
+            flex-basis: 100px;
+            background: lightgreen;
+        }
+    </style>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item two">2</div>
+        <div class="item three">3</div>
+        <div class="item">4</div>
+    </div>
+</body>
+</html>

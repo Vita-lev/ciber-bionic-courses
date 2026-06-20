@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Завдання 4</title>
+  </head>
+  <body>
+    <!-- <p>
+      Перепишіть наступний код таким чином, щоб замість умови використовувався
+      тернарний оператор. При цьому поведінка сценарію не повинна змінитись. let
+      x = 10; let y = 0; if (x > 5) y = 20; else y = 30; console.log(y);
+    </p> -->
+    <p id="text"></p>
+    <script>
+      let x = 10;
+
+      let y = 0;
+
+      y = x > 5 ? 20 : 30;
+
+      console.log(y);
+      // document.write(y);
+      document.getElementById("text").innerHTML = y;
+    </script>
+  </body>
+</html>

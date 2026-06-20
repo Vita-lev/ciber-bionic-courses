@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <pre>
+        Завдання:
+        Створіть два об'єкти, використовуючи конструктор і літерал. Обидва об'єкти мають містити властивості firstName та
+        lastName
+        з довільними значеннями. Створіть функцію print, яка буде приймати в якості параметра об'єкт та виводити властивості
+        lastName та firstName отриманого обєкта на екран.
+    </pre>
+    <script>
+        let obj1 = new Object();
+        obj1.firstName = "Jhon";
+        obj1.lastName = "Doe";
+
+        let obj2 = {
+            firstName: "JHON",
+            lastName: "DOE"
+        };
+
+        function print(obj) {
+            console.log("First Name: " + obj.firstName);
+            console.log("Last Name: " + obj.lastName);
+        }
+
+        print(obj1);
+        print(obj2);
+    </script>
+</body>
+</html>

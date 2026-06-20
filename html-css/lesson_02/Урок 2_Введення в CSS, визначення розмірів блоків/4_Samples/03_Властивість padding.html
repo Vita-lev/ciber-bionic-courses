@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Властивість padding/внутрішній відступ</title>
+    <!-- https://css.in.ua/css/property/padding -->
+</head>
+<body>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .block{
+            width: 100px;
+            height: 100px;
+            background: lightpink;
+
+            border: 10px solid red;
+            /* padding: 20px; */
+            box-sizing: border-box;
+        }
+        .block{
+            /* padding-top: 40px;
+            padding-right: 30px; 
+            padding-bottom: 20px;
+            padding-left: 10px; */
+            padding: 40px 0px;
+            box-sizing: border-box;
+            /*
+                перший запис: верх
+                другий запис: право
+                третій запис: низ
+                четвертий запис: ліво
+            */
+        }
+        ul{
+            background: aquamarine;
+            /* padding-left: 10px; */
+        }
+    </style>
+    
+    <div class="block">
+        Блочний елемент
+    </div>
+    <hr>
+    <!-- ul = unordered list -->
+    <!-- не нумерований список, 
+         маркований список 
+         детальніше дана розмітка буде розглянута в темі Комбінування_селекторів
+    -->
+    <ul>
+        <!-- li = list item -->
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul>
+</body>
+</html>

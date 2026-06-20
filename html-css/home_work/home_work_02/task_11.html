@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            height: 100vh;
+            background-color: azure;
+            display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: rgb(206, 203, 203);
+            width: 700px;
+            padding: 20px;
+            margin: 0 auto;
+            border: 10px solid white;
+        }
+
+        .title {
+            margin-bottom: 20px;
+        }
+
+        .text {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            width: fit-content;
+            padding: 10px;
+            background-color: rgb(144, 137, 137);
+            color: beige;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(69, 66, 66);
+        }
+
+        .btn:active {
+            background-color: rgb(139, 132, 132);
+            color: black;
+        }
+
+    </style>
+    
+</head>
+<body>
+   <div class="wrapper">
+    <div class="container">
+        <h1 class="title">Заголовок</h1>
+        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, enim iure? Totam, expedita possimus. Saepe blanditiis recusandae nemo sapiente cupiditate quae tempora reiciendis facere iure, voluptatum quis quaerat provident dignissimos.</p>
+        <button class="btn">Перевод</button>
+    </div>
+   </div>
+</body>
+</html>

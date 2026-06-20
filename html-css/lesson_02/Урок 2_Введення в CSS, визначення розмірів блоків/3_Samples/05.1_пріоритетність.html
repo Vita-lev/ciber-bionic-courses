@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пріоритетність у CSS</title>
+    <!-- https://w3schoolsua.github.io/css/css_specificity.html#gsc.tab=0 -->
+</head>
+<body>
+    
+    <style>
+        .paragraph{
+            color: green;
+            background: aqua;
+        }
+
+        /* .paragraph{
+            background: blue;
+        } */
+        
+        .message{
+            background: rgb(0, 51, 255);
+        }
+
+    </style>
+    <!-- Порядок імен класів в атрибуті не впливає на пріоритетність -->
+    <!-- Один елемент може мати багато імен через клас -->
+    <p class="paragraph message">Lorem, ipsum dolor.</p>
+    <p class="message paragraph ">Lorem, ipsum dolor.</p>
+
+</body>
+</html>

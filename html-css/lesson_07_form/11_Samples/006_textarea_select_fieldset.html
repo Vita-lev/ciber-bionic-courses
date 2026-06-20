@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Приклад створення випадаючих та багатозначних списків</legend>
+            <p>
+                <label for="phone">Оберіть модель:</label>
+                <select id="phone" name="phone">
+                    <option value="iphone 6s">iPhone 6S</option>
+                    <option value="lumia 950">Lumia 950</option>
+                    <option value="nexus 5x">Nexus 5X</option>
+                    <option value="galaxy s7">Galaxy S7</option>
+                </select>
+            </p>
+            <p>
+                <label for="phone">Оберіть модель:</label>
+                <select id="phone" name="phone">
+                    <!-- Використовуйте атрибути disabled та selected у парі та окремо-->
+                    <option disabled selected>Оберіть модель</option>
+                    <option value="iphone 6s">iPhone 6S</option>
+                    <option value="lumia 950">Lumia 950</option>
+                    <option value="nexus 5x">Nexus 5X</option>
+                </select>
+            </p>
+            <p>
+                <!-- Задавши атрибут multiple, у списку можна вибрати кілька елементів. -->
+                <label for="phone">Оберіть модель:</label>
+                <select multiple id="phone" name="phone">
+                    <option value="iphone 6s">iPhone 6S</option>
+                    <option value="lumia 950">Lumia 950</option>
+                    <option value="nexus 5x">Nexus 5X</option>
+                    <option value="galaxy s7">Galaxy S7</option>
+                    <option value="galaxy s8">Galaxy S8</option>
+                    <option value="galaxy s9">Galaxy S9</option>
+                    <option value="galaxy s22">Galaxy S22</option>
+                </select>
+            </p>
+            <p>
+                <!-- Елементи списку, що випадає, можна згрупувати, помістивши групу тегів option
+                всередину тегу optgroup -->
+                <label for="phone">Оберіть модель:</label>
+                <select id="phone" name="phone">
+                    <optgroup label="Apple">
+                        <option value="iphone 6s">iPhone 6S</option>
+                        <option value="iphone 6s plus">iPhone 6S Plus</option>
+                        <option value="iphone 5se">iPhone 5SE</option>
+                    </optgroup>
+                    <optgroup label="Microsoft">
+                        <option value="lumia 950">Lumia 950</option>
+                        <option value="lumia 950 xl">Lumia 950 XL</option>
+                        <option value="lumia 650">Lumia 650</option>
+                    </optgroup>
+                </select>
+            </p>
+        </fieldset>
+        <p>
+            <!-- Тег textarea дозволяє створити багаторядкове поле для введення тексту. За допомогою атрибуту cols та
+            rows можна задати кількість рядків та стовпців. -->
+            <input type="text">
+            <label for="comment">Залишіть коментар:</label><br />
+            <textarea 
+            id="comment" 
+            name="comment" 
+            cols="50" 
+            rows="4" 
+            placeholder="Залишіть коментар"
+            style="resize:none"
+            ></textarea>
+        </p>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

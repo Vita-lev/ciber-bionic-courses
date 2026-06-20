@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 02</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: antiquewhite;
+        font-size: 20px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .unordered {
+        display: flex;
+        width: 100%;
+        background-color: brown;
+        list-style: none;
+      }
+      .li {
+        border-right: 1px solid black;
+        margin: 10px;
+      }
+      .li:last-child {
+        border-right: none;
+      }
+      .link {
+        display: block;
+        padding: 20px;
+      }
+      .link:hover {
+        color: aliceblue;
+     
+      }
+      .link:active {
+        color: rgb(229, 249, 161);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <ul class="unordered">
+          <li class="li">
+            <a class="link" href="tel:+80451111111">+8 045 111-11-11</a>
+          </li>
+          <li class="li">
+            <a class="link" href="tel:+80452222222">+8 045 222-22-22</a>
+          </li>
+          <li class="li">
+            <a class="link" href="tel:+80453333333">+8 045 333-33-33</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

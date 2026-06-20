@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           
+            background-color: rgb(232, 225, 225);
+            height: 100vh;
+        }
+
+        .container {
+           padding: 12px;
+            background-color: white;
+            width: 500px;
+           
+        }
+
+        .text {
+            padding: 12px;
+            color: black;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .text--green {
+            background-color: rgb(86, 212, 86);
+            border-left: 3px solid rgb(8, 57, 1) ;
+        }
+
+        .text--blue {
+            background-color: rgb(93, 169, 202);
+            border-left: 3px solid rgb(16, 9, 143) ;
+        }
+
+        .text--yellow {
+            background-color: rgb(228, 228, 8);
+            border-left: 3px solid rgb(215, 148, 14) ;
+        }
+
+        .text--red {
+            background-color: rgb(241, 139, 139);
+            border-left: 3px solid rgb(223, 40, 7) ;
+        }
+
+        .text:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <p class="text text--green">Успех! данные успешно сохранены</p>
+            <p class="text text--blue">Информация! данные можно редактировать</p>
+            <p class="text text--yellow">Предупреждение! данные не сохранены</p>
+            <p class="text text--red">Опасно! данные будут удалены на всегда</p>
+        </div>
+    </div>
+    
+</body>
+</html>

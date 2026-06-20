@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Повернення результату роботи функції</title>
+</head>
+
+<body>
+    <script>
+        // приклад функції, яка використовує кілька return
+        function calculateArea(side1, side2, side3) {
+            // якщо немає значення для аргументу side1 або side2 - не виконуємо розрахунків, повертаємо undefined
+            if (side1 === undefined || side2 === undefined) {
+                return; // припинити роботу функції - повертається результат undefined
+            }
+
+            // якщо не вказана сторона 3, але є сторона 1 та 2 - рахуємо площу квадрата
+            if (side3 === undefined) {
+                return side1 * side2;
+            }
+            else {
+                // якщо зазначено три сторони - рахуємо площу трикутника за формулою Герона
+                let p = (side1 + side2 + side3) / 2; // напівпериметр трикутника
+                return Math.sqrt(p * (p - side1) * (p - side2) * (p - side3)); // корінь квадратний добутку напівпериметра та різниці напівпериметра з кожною стороною
+            }
+        }
+
+        let result = calculateArea(10, 10);
+        console.log("Площа квадрату " + result);
+
+        result = calculateArea(10, 10, 15);
+        console.log("Площа трикутника " + result);
+
+        result = calculateArea(10);
+        console.log("Площа фігури " + result);
+    </script>
+</body>
+
+</html>

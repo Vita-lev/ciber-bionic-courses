@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 07</title>
+    <style>
+        * {
+       
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+        }
+       .container {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+       }
+        .hero {
+        background-image: url(./images/затемненний.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: 1s;
+        height: 100vh;
+        cursor: pointer;   
+        color: white;
+        transition: 1s;
+        
+        width: 100%;
+        }
+        .group--item {
+        min-width: 250px;
+        }
+        .hero:hover {
+        background-image: url(./images/звичайний.png);
+        color: black;
+        }
+        .title {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        text-transform: uppercase;
+        padding-bottom: 70px;
+        padding-top: 150px;
+        font-size: 50px;
+        }
+        .group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 1400px;
+        gap: 70px;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        }
+        .group--h3 {
+        padding-bottom: 30px;
+        text-transform: uppercase;
+        font-size: 27px;
+        }
+        .group--image {
+            background-image: url(./images/1.png);
+            /* background-repeat:no-repeat; */
+            background-size: 40px 30px;
+            width: 40px;
+            height: 30px;
+        }
+
+        .two {
+            background-image: url(./images/2.png);
+
+        }
+
+        .three {
+            background-image: url(./images/3.png);
+        }
+        .group--title {
+            display: flex;
+            justify-content: flex-start;
+            align-items: unset;
+            gap: 15px;
+        }
+        .text {
+            text-align: justify;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <section class="hero">
+                <h1 class="title">Trade-in</h1>
+                <div class="group">
+                    <div class="group--item">
+                        <div class="group--title">
+                            <div class="group--image"></div>
+                            <h3 class="group--h3">program</h3>
+                        </div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Nobis tempore temporibus quam, aliquam consequatur doloribus nisi vitae, 
+                            sit eaque iure quia error magnam dicta consectetur, at architecto! Rerum i
+                            nventore non optio doloribus alias voluptates modi, quos nemo totam? Ex magni 
+                            recusandae laudantium voluptatem quod, rerum officia velit esse deleniti 
+                            voluptates!</div>
+                    </div>
+                      <div class="group--item">
+                        <div class="group--title">
+                            <div class="group--image two"></div>
+                            <h3 class="group--h3">work process</h3>
+                        </div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Nobis tempore temporibus quam, aliquam consequatur doloribus nisi vitae, 
+                            sit eaque iure quia error magnam dicta consectetur, at architecto! Rerum i
+                            nventore non optio doloribus alias voluptates modi, quos nemo totam? Ex magni 
+                            recusandae laudantium voluptatem quod, rerum officia velit esse deleniti 
+                            voluptates!</div>
+                    </div>
+
+                      <div class="group--item">
+                        <div class="group--title">
+                            <div class="group--image three"></div>
+                            <h3 class="group--h3">conditions</h3>
+                        </div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Nobis tempore temporibus quam, aliquam consequatur doloribus nisi vitae, 
+                            sit eaque iure quia error magnam dicta consectetur, at architecto! Rerum i
+                            nventore non optio doloribus alias voluptates modi, quos nemo totam? Ex magni 
+                            recusandae laudantium voluptatem quod, rerum officia velit esse deleniti 
+                            voluptates!</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+</body>
+</html>

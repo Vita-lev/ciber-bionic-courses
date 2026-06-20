@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 05</title>
+    <style>
+        .sm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 30px;
+            height: 150px;
+            background-color: SlateGray;
+        }
+
+        .circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: white;
+
+            transition: 1s;
+        }
+
+        .circle:hover {
+            transform: scale(1.2);
+            background-color: rgb(221, 239, 251);
+        } 
+
+        .circle:active {
+            transform: scale(1.5);
+            background-color: rgb(252, 255, 224);
+        } 
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav class="sm">
+                <a href="#" class="circle"><img src="/img/2.svg" alt=""></a>
+                <a href="#" class="circle"><img src="/img/3.svg" alt=""></a>
+                <a href="#" class="circle"><img src="/img/4.svg" alt=""></a>
+            </nav>
+
+        </div>
+    </div>
+</body>
+</html>

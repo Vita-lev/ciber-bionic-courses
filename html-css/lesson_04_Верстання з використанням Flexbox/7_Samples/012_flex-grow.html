@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-grow</title>
+</head>
+<body>
+    <style>
+        .container{
+            background: aqua;
+            max-width: 1000px;
+            height: 300px;
+            margin: 50px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item{
+            box-sizing: border-box;
+            border: 1px solid #000;
+            background: #ddd;
+            flex-grow: 1;
+            /* width: 300px; */
+            /* flex-basis: 300px; */
+            /* width: 200px; */
+        }
+        .two{
+            flex-grow: 2;
+            /* flex-basis: 300px; */
+            /* width: 300px; */
+            /* width: 400px; */
+        }
+        .three{
+            /* width: 100px; */
+            flex-grow: 3;
+        }
+    </style>
+    <div class="container">
+        <div class="item">1
+            <!-- Lorem ipsum dolor sit amet.
+            Lorem ipsum dolor sit amet.
+            Lorem ipsum dolor sit amet. -->
+            <!-- Lorem ipsum dolor sit amet. -->
+            <!-- Lorem ipsum dolor sit amet. -->
+            <!-- Lorem ipsum dolor sit amet. -->
+        </div>
+        <div class="item two">2</div>
+        <div class="item three">3</div>
+    </div>
+</body>
+</html>
+<!-- 
+    Ширина батьківського елемента: 1000px
+    Ширина блоків: 300px flex-grow = 1
+    Загальна кількість flex-grow значень: 2
+
+    Треба розрахувати місце, що залишилося
+    1000 - 300 - 300 = 400
+
+    Визначаємо розмір кожного значення flex-grow
+    flex-grow:1 + flex-grow:1 = 2
+
+    400 / 2 = 200
+
+    Залишок місця буде розподілено між усіма елементами ґрунтуючись на їх flex-grow властивості
+    Перший дів 300 + 200 = 500
+    Другий дів 300 + 200 = 500
+
+    ----------------------------------------------
+    Ширина батьківського елемента: 1000px
+    Ширина першого блоку: 200px flex-grow = 2
+    Ширина другого блоку: 400px flex-grow = 1
+    Загальна кількість flex-grow значень: 3
+
+    Треба розрахувати місце, що залишилося
+    1000 - 200 - 400 = 400
+
+    Визначаємо розмір кожного значення flex-grow
+    flex-grow:2 + flex-grow:1 = 3
+
+    400 / 3 = 133.333
+
+    Залишок місця буде розподілено між усіма елементами ґрунтуючись на їх flex-grow властивості
+    Перший дів 200 + 133.333 + 133.333 = 466.66
+    Другий дів 400 + 133.333 = 533.33
+
+    ----------------------------------------------
+    Ширина батьківського елемента: 1000px
+    Ширина першого блоку: 200px flex-grow = 2
+    Ширина другого блоку: 400px flex-grow = 1
+    Ширина третього блоку: 100px flex-grow = 3
+    Загальна кількість flex-grow значень: 6
+
+    Треба розрахувати місце, що залишилося
+    1000 - 200 - 400 - 100 = 300
+
+    Визначаємо розмір кожного значення flex-grow
+    flex-grow:2 + flex-grow:1 + flex-grow:3 = 6
+
+    300 / 6 = 50
+
+    Залишок місця буде розподілено між усіма елементами ґрунтуючись на їх flex-grow властивості
+    Перший дів 200 + (50 * 2) = 300
+    Другий дів 400 + 50       = 450
+    Третій дів 100 + (50 * 3) = 250
+
+-->

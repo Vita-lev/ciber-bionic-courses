@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        form :invalid:focus {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+      Для валідації (перевірки на правильність заповнення полів та елементів форми) використовується ряд атрибутів:
+            - required - вимагає обов'язкового введення значення.
+            - min і max - мінімально та максимально допустимі значення.
+            - pattern - задає шаблон, якому повинні відповідати дані, що вводяться.
+      -->
+    <form>
+        <p>
+            <label for="login">Логін:</label>
+            <input type="text" name="login" id="login" required />
+        </p>
+        <p>
+            <label for="password">Пароль:</label>
+            <input type="password" name="password" id="password" required />
+        </p>
+        <p>
+            <label for="age">Вік:</label>
+            <input type="number" name="age" id="age" value="18" min="1" max="100" />
+        </p>
+        <p>
+            <label for="phone">Телефон:</label>
+            <input type="tel"name="phone" id="phone" required placeholder="555-55555" pattern="\d{3}-\d{5}"   />
+        </p>
+        <p>
+            <input type="submit" value="Реєстрація" />
+        </p>
+    </form>
+
+</body>
+</html>
