@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Creation</title>
+</head>
+<body>
+    <script>
+        // створення вузлів
+        let divElement = document.createElement("div");         // створення HTML-елемента <div></div>
+        let divText = document.createTextNode("Hello world");   // створення текстового вузла "Hello world"
+
+        // створені вузли не будуть видимі користувачу, поки не стануть частиною DOM, який зображує сторінка
+
+        // додавання створених вузлів на сторінку
+        divElement.append(divText);       // поміщаємо текстовий вузол HTML-елемент. Метод append додає вузол як останній дочірній вузол
+        document.body.append(divElement); // наприкінці документа додаємо HTML-елемент, у якому розташований текстовий вузол
+
+        // альтернативний варіант з використанням раннього API
+         //divElement.appendChild(divText);
+         // document.body.appendChild(divElement);
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>Яблуко</li>
+        <li>Груша</li>
+        <li>Апельсин</li>
+        <li>Мандарин</li>
+        <li>Ананас</li>
+        <li>Сливка</li>
+    </ul>
+
+    <script>
+        let list = document.querySelector("#list");
+
+        let items = document.querySelectorAll("li"); // отримуємо об'єкт NodeList (це не масив)
+        let itemsArray = Array.from(items); // на основі NodeList створюємо масив
+        
+       // виконуємо сортування за допомогою стандартного методу масиву
+         // оскільки сортуються вузли DOM, потрібно визначити критерії, за якими вузли порівнюватимуть
+         // функція, яка вказана в параметрі методу sort, визначає логіку порівняння двох елементів в масиві, вона має повертати значення:
+         // якщо a < b повертати значення менш як 0
+         // якщо a > b повертати значення більш як 0
+         // якщо a == b повертати 0
+
+        itemsArray.sort(function (a, b) {
+            if (a.textContent < b.textContent)
+                return -1;
+            if (a.textContent > b.textContent)
+                return 1;
+            return 0;
+        });
+
+        // додавання елементів в алфавітному порядку
+         // оскільки елементи вже є в дереві DOM, то під час додавання елемент видаляється зі своєї попередньої позиції
+        itemsArray.forEach(item => {
+            list.append(item);
+        });
+
+
+    </script>
+</body>
+
+</html>
