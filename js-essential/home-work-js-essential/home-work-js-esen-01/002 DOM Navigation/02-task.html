@@ -1,45 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 2</title>
 
     <style>
-        #color-sample {
-            width: 250px;
-            height: 70px;
-            margin: 10px;
-        }
+      #color-sample {
+        width: 250px;
+        height: 70px;
+        margin: 10px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="color-sample"></div>
-    <p>Колір: </p>
+    <p>Колір:</p>
 
     <script>
-        /*
+      /*
         Завдання:
         Виправте сценарій так, щоб окрім зміни кольору div#color-sample у параграфі під div виводилося повідомлення
         Колір: #000000
         Де #000000 значення кольору фону елемента div#color-sample.
         */
-        function getRandomColor() {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
         }
+        return color;
+      }
 
-        let colorSampleDiv = document.querySelector("#color-sample");
-        colorSampleDiv.style.backgroundColor = getRandomColor();
+      let colorSampleDiv = document.querySelector("#color-sample");
+      //   colorSampleDiv.style.backgroundColor = getRandomColor();
 
+      let color = getRandomColor();
+      colorSampleDiv.style.backgroundColor = color;
 
+      let paragraph = document.querySelector("p");
+      paragraph.textContent = `Колір: ${color}`;
     </script>
-</body>
-
+  </body>
 </html>

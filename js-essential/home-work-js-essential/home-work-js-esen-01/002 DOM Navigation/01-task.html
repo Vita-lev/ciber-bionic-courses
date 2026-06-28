@@ -1,22 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 1</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div>Ви ввели: <span></span></div>
 
     <script>
-        /*
+      /*
         Завдання:
         Виведіть значення змінної input в span, що розташований на сторінці.
         */
-        let input = prompt("Введіть повідомлення");
+      let input = prompt("Введіть повідомлення");
+      let span = document.querySelector("span");
+      span.textContent = input;
     </script>
-</body>
-
+  </body>
 </html>
