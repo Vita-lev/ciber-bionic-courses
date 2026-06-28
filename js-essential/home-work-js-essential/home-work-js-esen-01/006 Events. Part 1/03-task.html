@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    Операнд 1: <input id="input1" type="text"> <br />
+    <span id="input1Error" class="error">Введіть значення</span> <br />
+    
+    Операнд 2: <input id="input2" type="text"> <br />
+    <span id="input2Error" class="error">Введіть значення</span> <br />
+
+    <button id="add-btn">+</button>
+    <button id="rem-btn">-</button>
+    <button id="mul-btn">*</button>
+    <button id="div-btn">/</button>
+    <button id="reset-btn">reset</button>
+
+    <script>
+        /*
+        Завдання:
+        Внесіть зміни до цього сценарію.
+        Додайте обробник на клік по кнопці reset. Під час натискання на значення введені в поля введення "Операнд 1"
+        та "Операнд 2" мають бути замінені на значення 0.
+        Додайте перевірку перед виконанням будь-якої арифметичної операції. Якщо поле введення порожнє, зробіть
+        для цього поля введення червону рамку та видимий елемент з помилкою під цим полем введення.
+        Для поля введення input1 за відсутності значення зробіть видимим span #input1Error, для поля введення
+        input2 зробіть, якщо помилка, #input2Error видимим.
+        */
+        let input1 = document.querySelector("#input1");
+        let input3 = document.querySelector("#input2");
+
+        let addBtn = document.querySelector("#add-btn");
+        let remBtn = document.querySelector("#rem-btn");
+        let mulBtn = document.querySelector("#mul-btn");
+        let divBtn = document.querySelector("#div-btn");
+
+        addBtn.addEventListener("click", function () {
+            alert(Number(input1.value) + Number(input2.value));
+        });
+
+        remBtn.addEventListener("click", function () {
+            alert(input1.value - input2.value);
+        });
+
+        mulBtn.addEventListener("click", function () {
+            alert(input1.value * input2.value);
+        });
+
+        divBtn.addEventListener("click", function () {
+            alert(input1.value / input2.value);
+        });
+    </script>
+</body>
+
+</html>
