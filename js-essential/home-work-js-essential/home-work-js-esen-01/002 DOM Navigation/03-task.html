@@ -90,15 +90,23 @@
 
       for (let i = 1; i < rows.length - 1; i++) {
         let cells = rows[i].querySelectorAll("td");
-      }
 
-      sum1 += Number(cells[1].textContent);
-      sum2 += Number(cells[2].textContent);
+        sum1 += Number(cells[1].textContent);
+        sum2 += Number(cells[2].textContent);
+      }
 
       document.querySelector(".totalSum1").textContent = sum1;
       document.querySelector(".totalSum2").textContent = sum2;
 
       let resultDiv = document.querySelector("#result");
+
+      if (sum1 > sum2) {
+        resultDiv.textContent = "Відділ 1 зробив більше продажів";
+      } else if (sum2 > sum1) {
+        resultDiv.textContent = "Відділ 2 зробив більше продажів";
+      } else {
+        resultDiv.textContent = "Продажі однакові";
+      }
     </script>
   </body>
 </html>

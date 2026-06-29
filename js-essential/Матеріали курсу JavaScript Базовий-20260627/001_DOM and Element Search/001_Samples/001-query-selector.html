@@ -1,37 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>querySelector #1</title>
 
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .test {
-            color: red;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .test {
+        color: red;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <p id="first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, numquam unde. Aut dolorum in, quia
-        numquam
-        error recusandae est odio nesciunt ut illum blanditiis illo minima, officiis mollitia eaque fugit.</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum corrupti sapiente, qui eius fuga nisi. Sequi
-        quibusdam sapiente deserunt fuga dolorem commodi perspiciatis, cum soluta possimus quaerat. Labore, eveniet
-        iusto.</p>
+  <body>
+    <p id="first">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, numquam
+      unde. Aut dolorum in, quia numquam error recusandae est odio nesciunt ut
+      illum blanditiis illo minima, officiis mollitia eaque fugit.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum corrupti
+      sapiente, qui eius fuga nisi. Sequi quibusdam sapiente deserunt fuga
+      dolorem commodi perspiciatis, cum soluta possimus quaerat. Labore, eveniet
+      iusto.
+    </p>
 
     <script>
-        // document дає змогу отримати доступ до DOM-дерева
-        // querySelector здійснює пошук за DOM-деревом і повертає перший елемент, що підходить під CSS-селектор, який вказаний у параметрах
+      // document дає змогу отримати доступ до DOM-дерева
+      // querySelector здійснює пошук за DOM-деревом і повертає перший елемент, що підходить під CSS-селектор, який вказаний у параметрах
 
-        let paragraph = document.querySelector("#first");   // знаходимо елемент з id="first"
-        paragraph.style.border = "2px solid red";           // змінюємо стилі для елемента, задаючи властивості border значення 2 "px solid red"
+      let paragraph = document.querySelector("#first");
+
+      console.dir(paragraph);
+      // знаходимо елемент з id="first"
+      paragraph.style.border = "4px solid blue";
+      paragraph.style.backgroundColor = "yellow"; // змінюємо стилі для елемента, задаючи властивості border значення 2 "px solid red"
+
+      let el = 600;
+      paragraph.style.height = el + "px";
     </script>
-</body>
-
+  </body>
 </html>
-
