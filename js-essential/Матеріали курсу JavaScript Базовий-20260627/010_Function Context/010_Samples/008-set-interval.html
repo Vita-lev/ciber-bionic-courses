@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <script>
+        function showMessage() {
+            alert("Hello world");
+        }
+
+       // setInterval планує регулярний запуск функції із зазначеним інтервалом.
+         // Перший параметр – функція, яка запускається.
+         // Другий параметр – затримка в мілісекундах (1000 мілісекунд = 1 секунда).
+        setInterval(showMessage, 2000); // Функція showMessage буде запускатися з інтервалом у 2 секунди, доки не буде закрито вкладку.
+    </script>
+</body>
+</html>

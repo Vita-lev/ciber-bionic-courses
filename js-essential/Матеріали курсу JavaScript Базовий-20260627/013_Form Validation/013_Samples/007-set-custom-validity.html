@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вбудована валідація</title>
+    <style>
+        .form-group {
+            margin: 12px 4px;
+        }
+
+        .form-group label {
+            display: block;
+        }
+
+        .form-group label.inline {
+            display: inline-block;
+        }
+
+        /* :valid – псевдоклас знаходить елементи, які пройшли валідацію */
+        input:valid {
+            border: 1px solid green;
+        }
+
+        /* :invalid – псевдоклас знаходить елементи, які не пройшли валідацію */
+        input:invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="form-group">
+            <label>Ім'я</label>
+            <input type="text" name="firstNameInput" required>
+        </div>
+        <div class="form-group">
+            <label>Прізвище</label>
+            <input type="text" name="lastNameInput" required>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="emailInput" required>
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" name="passwordInput" required minlength="6" maxlength="16">
+        </div>
+        <div class="form-group">
+            <label>Підтвердження пароля</label>
+            <input type="password" name="passwordConfirmInput" required minlength="6" maxlength="16">
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="acceptedInput" required>
+            <label class="inline">Згоден з умовами використання</label>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Зареєструватись">
+        </div>
+    </form>
+
+
+    <script>
+        const form = document.forms[0];
+
+        form.addEventListener("submit", function (e) {
+            alert("Форму відправлено");
+        });
+
+        form.passwordConfirmInput.addEventListener("input", function () {
+            // setCustomValidity – додає налаштоване повідомлення про помилку в елемент.
+             // Якщо повідомлення встановлено, елемент вважається не валідним.
+             // Якщо повідомленням є порожній рядок, елемент вважається валідним.
+            if (form.passwordConfirmInput.value != form.passwordInput.value) {
+                form.passwordConfirmInput.setCustomValidity("Пароль та підтвердження пароля не збігаються.");
+                form.passwordInput.setCustomValidity("Пароль та підтвердження пароля не збігаються.");
+            }
+            else {
+                form.passwordConfirmInput.setCustomValidity(""); // Прибираємо помилку.
+                form.passwordInput.setCustomValidity("");
+            }
+        });
+    </script>
+</body>
+
+</html>

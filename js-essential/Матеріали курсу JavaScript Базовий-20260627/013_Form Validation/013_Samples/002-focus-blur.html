@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Події focus і blur</title>
+
+    <style>
+        .form-group {
+            margin: 4px;
+        }
+
+        .form-group label {
+            width: 75px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <form action="https://itvdn.com/ru/catalog" method="GET">
+            <label>Запит</label>
+            <input type="text" name="search">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Пошук">
+        </div>
+    </form>
+
+    <script>
+        const form = document.forms[0];
+        // Focus – подія відбувається, коли елемент отримує фокус. Подія не спливає. Наприклад, під час натискання елемента або переходу
+         // на елемент за допомогою кнопки Tab. Подія вказує на те, що користувач готується до введення даних.
+         // Може використовуватися для ініціалізації даних, які необхідні під час введення.
+        form.search.addEventListener("focus", function () { console.log("focus") });
+
+        // blur – подія відбувається у момент втрати фокуса, коли виконується клік за межами елемента управління
+         // чи фокус отримує інший елемент управління. Подія не спливає. Подія вказує на те, що користувач увів дані.
+         // Найчастіше використовується для перевірки введених користувачем даних.
+        form.search.addEventListener("blur", function () { console.log("blur") });
+
+        // Оскільки події focus і blur не підтримують спливання, є додаткові події focus і focusout, які підтримують
+         // його, але обробники для цих подій можуть бути додані тільки за допомогою addEventListener.
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шаблон-модуль</title>
+</head>
+
+<body>
+    <script>
+        //Шаблон-модуль дає змогу створити об'єкт із закритими та відкритими членами.
+        let calc = (function () {
+            // Закриті члени модуля.
+            let x, y;
+
+            // Відкриті члени модуля.
+            // Х та y перебувають у лексичному оточенні IIFE і зберігаються у замиканнях, які створені функціями add, setX, setY.
+            return {
+                add: function () {
+                    return x + y;
+                },
+
+                setX: function (val) {
+                    x = val;
+                },
+
+                setY: function (val) {
+                    y = val;
+                }
+            }
+        }());
+
+        calc.setX(2);
+        calc.setY(3);
+
+        console.log(calc.add());
+    </script>
+</body>
+
+</html>

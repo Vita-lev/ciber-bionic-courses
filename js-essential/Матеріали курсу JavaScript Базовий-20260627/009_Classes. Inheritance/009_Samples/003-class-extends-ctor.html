@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Успадкування та конструктор</title>
+</head>
+
+<body>
+    <script>
+        class Animal {
+            // Конструктор базового класу
+            constructor(name) {
+                this.name = name;
+            }
+
+            sleep() {
+                console.log(this.name + " спить.");
+            }
+
+            eat() {
+                console.log(this.name + " їсть.");
+            }
+        }
+
+        class Dog extends Animal {
+           // Якщо похідний клас містить конструктор, перед тим, як у ньому відбудеться перше звернення до контексту (this)
+            // і до завершення тіла конструктора, має бути викликаний конструктор базового класу через ключове слово super().
+            // Водночас властивості для похідного класу, які отримані у спадок, будуть містити значення, ініціалізовані конструктором
+            // батьківського класу, викликаного через super.
+            // Якщо в класі немає конструктора, то автоматично створюється такий порожній конструктор.
+            // Конструктор, який усі отримані параметри передасть конструктору базового класу.
+            
+            // constructor(...args) {
+            //     super(...args);
+            // }
+
+            eat() {
+                console.log(`Собака ${this.name} їсть м'ясо.`);
+            }
+        }
+
+        class Cow extends Animal {
+            eat() {
+                console.log(`Корова ${this.name} їсть траву.`);
+            }
+        }
+
+        let a1 = new Dog("Шарік");
+        let a2 = new Cow("Бурьонка");
+
+        a1.eat();
+        a1.sleep();
+
+        console.log("-------");
+
+        a2.eat();
+        a2.sleep();
+
+        console.log("-------");
+
+        let animals = [new Dog("Шарік"), new Cow("Бурьонка")];
+
+        animals.forEach(animal => {
+            animal.eat();
+            animal.sleep();
+        });
+    </script>
+</body>
+
+</html>

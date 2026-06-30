@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приклад використання статичних методів</title>
+</head>
+
+<body>
+    <script>
+        class User {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            log() {
+                console.log(this.name + " " + this.age);
+            }
+
+            static compare(user1, user2) {
+                return user1.age - user2.age;
+            }
+        }
+
+        let array = [
+            new User("Ivan", 29),
+            new User("Igor", 25),
+            new User("Elena", 32),
+            new User("Petr", 41),
+            new User("Anna", 24),
+            new User("Irina", 26),
+        ];
+
+        // Метод масиву sort може приймати як параметр функцію, що визначає критерії оцінювання, який об'єкт вважати великим, а який меншим.
+         // Функція приймає два параметри та має повертати числове значення.
+         // Якщо числове значення менше за 0, це означає, що перший об'єкт менший за другий.
+         // Якщо значення більше за 0, перший об'єкт більший за другий.
+         // Якщо значення 0, то об'єкти рівні.
+
+        array.sort(User.compare);
+
+        array.forEach(user => user.log());
+    </script>
+</body>
+
+</html>

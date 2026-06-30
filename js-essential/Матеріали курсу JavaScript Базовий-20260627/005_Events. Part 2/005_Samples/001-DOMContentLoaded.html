@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMContentLoaded</title>
+    <script>
+      // Якщо спробувати звернутися до елементів у сценарії, розташованому в head,
+         // буде отримано помилку, оскільки браузер ще знає про існування елементів
+         // #testDiv та #testImg
+         // console.log(document.querySelector("#testDiv").textContent);
+         // console.log(document.querySelector("#testImg").style.width + "px");
+
+         // DOMContentLoaded – браузер завантажив розмітку та побудував DOM-дерево.
+         // Проте зовнішні ресурси, наприклад картинки, ще можуть завантажуватися.
+        document.addEventListener("DOMContentLoaded", function () {
+            let div = document.querySelector("#testDiv")
+            let img = document.querySelector("#testImg")
+           
+            console.log(div.textContent);
+            console.log(getComputedStyle(img).width); // 0px оскільки зовнішні ресурси ще не завантажені, розмір картинки невідомий.
+        });
+    </script>
+</head>
+
+<body>
+    <div id="testDiv">This is div</div>
+    <img id="testImg" src="https://via.placeholder.com/500" alt="placeholder image 500 * 500">
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Параметри куки</title>
+</head>
+<body>
+
+    <button>Перевірити cookie</button>
+    <script>
+        document.cookie = "color=green; max-age=30; path=/;";
+       // path – вказує сторінки, на яких працюватиме куки
+       // /catalog на сторінках / catalog / folder тощо, але на сторінці /home працювати не буде.
+        // /– для всіх сторінок.
+        // max-age – час життя, значення в секундах.
+        // expires – дата, коли значення має бути видалено. Приклад: значення 20 May 2022 05:15:05 GMT
+        
+        // samesite – значення strict, lax чи none. Налаштування необхідне для захисту від уразливості CSRF.
+        // Не підтримується старими браузерами (до 2017 року).
+        // CSRF – https://ua.wikipedia.org/wiki/Міжсайтова_підробка_запиту
+        // Документація за samesite https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite
+        // secure – куки можна надсилати тільки за HTTPS.
+        // httpOnly – куки використовуються лише для HTTP-запитів і не можуть бути отримані за допомогою JS-коду.
+        
+        document.querySelector("button").addEventListener("click", function() {
+            alert(document.cookie);
+        });
+    </script>
+</body>
+</html>

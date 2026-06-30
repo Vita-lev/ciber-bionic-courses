@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super</title>
+</head>
+
+<body>
+    <script>
+        class BaseClass {
+            method1() {
+                console.log("Method from BaseClass");
+            }
+        }
+
+        class DerivedClass extends BaseClass {
+            constructor(value) {
+                //super(); // Конструктор похідного класу має завжди викликати конструктор базового класу.
+                this.derivedClassProperty = value;
+            }
+
+            method2() {
+                console.log("Method from DerivedClass " + this.derivedClassProperty);
+            }
+        }
+
+        let obj1 = new BaseClass();
+        // Коли запускається конструктор похідного класу, порожній об'єкт не встановлюється як контекст.
+         // Це завдання виконує конструктор базового класу. Щоб контекст у похідному класі вказував на новий створюваний
+         // об'єкт, необхідно викликати конструктор базового класу через super().
+        let obj2 = new DerivedClass(10);
+        
+        obj1.method1();
+
+        obj2.method1();
+        obj2.method2();
+    </script>
+</body>
+
+</html>

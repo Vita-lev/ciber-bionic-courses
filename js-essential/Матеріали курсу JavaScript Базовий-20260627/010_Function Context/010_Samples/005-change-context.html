@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зміна контексту</title>
+</head>
+
+<body>
+    <script>
+        let obj1 = {
+            prop1 : "Test",
+            prop2 : 123
+        };
+
+        let obj2 = {
+            prop1 : "Hello",
+            prop2 : "world"
+        };
+
+        function show() {
+            console.log(this.prop1);
+            console.log(this.prop2);
+        }
+
+        show(); // Контекст функції – глобальний об'єкт.
+        
+        // apply та call – методи для запуску обраної функції із застосуванням зазначеного контексту.
+        show.apply(obj1); // Контекст функції, яка викликається, – obj1.
+        show.call(obj2); // Контекст функції, яка викликається, – obj2.
+
+        let newFunction = show.bind(obj1); // Створюємо нову функцію та прив'язуємо до неї як контекст obj1.
+        newFunction();
+    </script>
+</body>
+
+</html>

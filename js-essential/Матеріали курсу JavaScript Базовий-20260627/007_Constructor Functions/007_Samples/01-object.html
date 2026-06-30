@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простий об'єкт</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="placeholder"></div>
+
+    <script>
+      // Об'єкт – сукупність зв'язаних даних і функціональних можливостей. Об'єкти містять
+         // властивості та методи.
+         // Властивості – стан об'єкта, значення будь-якого типу.
+         // Методи – поведінка об'єкта, функція, яка виконує будь-яку операцію.
+
+        let car = {
+            image: "audi-a6-250.jpg",
+            manufacturer: "Audi",
+            model: "A6",
+            year: "2011",
+            VIN: "ABCD1234567890XYZ",
+
+            showStats: function (element) {
+                element.insertAdjacentHTML("beforeend", `<img src="images/${this.image}" /><br />`);
+                element.insertAdjacentHTML("beforeend", `Виробник: ${this.manufacturer}<br />`);
+                element.insertAdjacentHTML("beforeend", `Модель: ${this.model}<br />`);
+                element.insertAdjacentHTML("beforeend", `Рік випуску: ${this.year}<br />`);
+                element.insertAdjacentHTML("beforeend", `VIN: ${this.VIN}<br />`);
+            }
+        };
+
+        let placeholder = document.querySelector("#placeholder");
+        car.showStats(placeholder);
+    </script>
+</body>
+
+</html>

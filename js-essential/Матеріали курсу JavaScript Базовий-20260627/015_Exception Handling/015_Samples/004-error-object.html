@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Об'єкт помилки</title>
+</head>
+
+<body>
+    <script>
+        function func1() {
+            func2();
+        }
+
+        function func2() {
+            func3();
+        }
+
+        function func3() {
+            let json = '{"name" : "Ivan", "age" = 20}';
+            let obj = JSON.parse(json);
+        }
+
+        try {
+            func1();
+        } catch (error) { // Об'єкт винятку.
+            console.log(error.name); // Ім'я помилки.
+            console.log(error.message); // Текстове повідомлення з деталями помилки.
+            console.log(error.stack); // Стек викликів (рядок, який містить послідовність викликів, які призвели до помилки).
+        }
+    </script>
+</body>
+
+</html>

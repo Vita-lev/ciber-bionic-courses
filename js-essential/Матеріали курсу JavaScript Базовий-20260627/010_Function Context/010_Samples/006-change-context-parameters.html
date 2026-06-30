@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зміна контексту</title>
+</head>
+
+<body>
+    <div id="elem1"></div>
+    <div id="elem2"></div>
+    <div id="elem3"></div>
+
+    <script>
+        let obj1 = {
+            prop1: "Hello",
+            prop2: "world"
+        };
+
+        function show(elementSelector, color) {
+            let element = document.querySelector(elementSelector);
+            element.style.color = color;
+            element.innerHTML += this.prop1 + " ";
+            element.innerHTML += this.prop2;
+        }
+
+        show.apply(obj1, ["#elem1", "red"]); // Параметри передаються масивом.
+        show.call(obj1, "#elem2", "green"); // Параметри передаються окремо.
+
+        let f = show.bind(obj1, "#elem3", "blue"); // Параметри можуть бути прив'язані до створюваної функції разом із контекстом.
+        f();
+
+        // або
+        // let f = show.bind(obj1);
+        // f("#elem1", "blue");
+    </script>
+</body>
+
+</html>

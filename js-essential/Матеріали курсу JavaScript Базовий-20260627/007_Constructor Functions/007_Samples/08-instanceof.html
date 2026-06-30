@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instaceof</title>
+</head>
+<body>
+    <script>
+        function Car(model) {
+            this.model = model;
+            this.wheels = 4;
+        }
+
+        function User(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        let date = new Date();
+        let car = new Car("Jaguar X-Type");
+        let user = new User("Jhon", 25);
+
+        // Функція конструктор – НЕ представляє тип даних.
+         // Створений екземпляр через будь-яку з функцій конструктора належить до типу object.
+        console.log(typeof date); // object
+        console.log(typeof car); // object
+        console.log(typeof user); // object
+
+       // instanceof – ключове слово, яке перевірять наявність у ланцюжку прототипів
+         // прототипу зазначеної функції.
+        console.log(date instanceof Date); // true – date створений конструктором Date.
+        console.log(car instanceof Car); // true – car створений конструктором Car.
+        console.log(user instanceof User); // true – user створений конструктором User.
+
+        console.log(user instanceof Date); // false – user не створений конструктором Date.
+        console.log(user instanceof Car); // false – user не створений конструктором Car.
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Успадкування</title>
+</head>
+
+<body>
+    <script>
+        // Базовий клас Animal
+        class Animal {
+            sleep() {
+                console.log("Тварина спить.");
+            }
+
+            eat() {
+                console.log("Тварина їсть.");
+            }
+        }
+
+        // Похідний клас Dog.
+         // Клас Dog розширює клас Animal.
+         // Клас Dog успадковується від класу Animal, це означає, що методи та властивості класу Animal будуть доступні у класі
+         // Dog, водночас дочірній клас Dog може замістити роботу методів, які отримані у спадок, а також додати свої методи.
+        class Dog extends Animal {
+            eat() {
+                console.log("Собака їсть м'ясо.");
+            }
+        }
+
+        // Клас Cow розширює клас Animal.
+        class Cow extends Animal {
+            eat() {
+                console.log("Корова їсть траву.");
+            }
+        }
+
+        let a1 = new Dog();
+        let a2 = new Cow();
+
+        a1.eat();
+        a1.sleep();
+
+        console.log("-------");
+
+        a2.eat();
+        a2.sleep();
+
+        console.log("-------");
+
+        let animals = [new Dog(), new Cow()];
+
+        animals.forEach(animal => {
+            animal.eat();
+            animal.sleep();
+        });
+    </script>
+</body>
+
+</html>

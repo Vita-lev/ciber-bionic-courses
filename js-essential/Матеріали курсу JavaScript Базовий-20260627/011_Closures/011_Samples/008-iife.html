@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE</title>
+</head>
+
+<body>
+    <script>
+       // IIFE (inmidiatly invoked function expression) – функція, яка запускається відразу після оголошення.
+       // Прийом, що дає змогу визначити блок коду, в якому створені ідентифікатори будуть локальними,
+       // а не глобальними, оскільки, створюючи змінну у функції, вона перебуває у лексичному оточенні цієї функції.
+       // IIFE широко використовувалися в попередніх версіях JavaScript до введення модулів і let.
+       // Вон давали змогу легко контролювати кількість створюваних глобальних змінних.
+
+        // Негайно викликана функція. Варіант 1.
+        (function () {
+            alert("Hello world");
+        }());
+
+        // Негайно викликана функція. Варіант 2.
+        (function () {
+            alert("Hello world");
+        })();
+    </script>
+</body>
+
+</html>
