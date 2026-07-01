@@ -1,27 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 2</title>
 
     <style>
-        div {
-            font-weight: bold;
-        }
+      div {
+        font-weight: bold;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     Робочі дні
-    <div></div>
+    <div class="work"></div>
 
     Вихідні дні
-    <div></div>
+    <div class="weekend"></div>
 
     <script>
-       /*
+      /*
         Завдання:
         Використовуючи параграфи, виведіть усі робочі дні тижня у div, який розташований після фрази "Робочі дні",
         виведіть усі вихідні дні тижня після фрази "Вихідні дні".
@@ -29,14 +28,29 @@
         Створюйте параграфи за допомогою перебору масиву days. У параграфі поміщайте значення властивості name.
         */
 
-        let days = [{ name: "Sunday", isWorkDay: false },
+      let days = [
+        { name: "Sunday", isWorkDay: false },
         { name: "Monday", isWorkDay: true },
         { name: "Tuesday", isWorkDay: true },
         { name: "Wednesday", isWorkDay: true },
         { name: "Thursday", isWorkDay: true },
         { name: "Friday", isWorkDay: true },
-        { name: "Saturday", isWorkDay: false }];
-    </script>
-</body>
+        { name: "Saturday", isWorkDay: false },
+      ];
 
+      let work = document.querySelector(".work");
+      let weekend = document.querySelector(".weekend");
+
+      for (const day of days) {
+        let p = document.createElement("p");
+        p.textContent = day.name;
+
+        if (day.isWorkDay) {
+          work.append(p);
+        } else {
+          weekend.append(p);
+        }
+      }
+    </script>
+  </body>
 </html>
