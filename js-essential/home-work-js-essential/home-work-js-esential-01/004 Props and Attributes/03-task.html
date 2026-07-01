@@ -19,6 +19,11 @@
         Напишіть сценарій, який видалить на сторінці елементи
          з атрибутом data-remove.
         */
+      const divs = document.querySelectorAll("div");
+
+      divs.forEach((div) => {
+        if (div.hasAttribute("data-remove")) div.remove();
+      });
     </script>
   </body>
 </html>
