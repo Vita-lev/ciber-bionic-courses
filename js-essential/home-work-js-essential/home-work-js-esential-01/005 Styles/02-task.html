@@ -1,21 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 02</title>
-</head>
+  </head>
 
-<body>
-    <div>
-        Логін або пароль введено неправильно
-    </div>
+  <body>
+    <div>Логін або пароль введено неправильно</div>
     <script>
-        /*
+      /*
         Завдання:
-        Не використовуючи CSS-класи, змініть за допомогою JavaScript-коду оформлення елемента DIV, який розташований на поточній сторінці.
+        Не використовуючи CSS-класи, змініть за допомогою JavaScript-коду
+         оформлення елемента DIV, який розташований на поточній сторінці.
         
          Додайте:
          >> шрифт – 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,7 +21,12 @@
          >> внутрішній відступ у 16px;
          >> округлення рамки в 8 px.
         */
-    </script>
-</body>
 
+      let div = document.querySelector("div");
+      div.style.border = "1px solid red";
+      div.style.padding = "16px";
+      div.style.fontFamily = "Segoe UI, Tahoma, Geneva, Verdana, sans-serif";
+      div.style.borderRadius = "8px";
+    </script>
+  </body>
 </html>
