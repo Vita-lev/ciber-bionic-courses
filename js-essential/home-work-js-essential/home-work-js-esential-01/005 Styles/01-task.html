@@ -12,7 +12,7 @@
       }
 
       .error {
-        border: 1x solid red;
+        border: 1px solid red;
         padding: 12px;
         color: red;
       }
@@ -24,9 +24,12 @@
     <script>
       /*
         Завдання:
-        Напишіть код, який додасть CSS клас error для елемента DIV, 
+        Напишіть код, який додасть CSS клас error для елемента DIV,
         що розміщений у поточному документі..
         */
+
+      let div = document.querySelector("div");
+      div.classList.add("error");
     </script>
   </body>
 </html>
