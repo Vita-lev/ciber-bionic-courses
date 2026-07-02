@@ -33,8 +33,18 @@
         age: "25",
       };
 
-      let elements = document.querySelectorAll("data-bind");
-      elements.forEach((item) => {});
+      let elements = document.querySelectorAll("[data-bind]");
+      elements.forEach((item) => {
+        console.log(item.dataset.bind);
+        console.log(user[item.dataset.bind]);
+
+        item.textContent = user[item.dataset.bind];
+      });
+
+      //   let key = "age";
+      //   console.log(user.firstName);
+      //   console.log(user["firstName"]);
+      //   console.log(user[key]);
     </script>
   </body>
 </html>
