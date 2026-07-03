@@ -1,18 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Проста подія</title>
-</head>
-<body>
+    <style>
+      #box {
+        width: 200px;
+        height: 200px;
+        color: antiquewhite;
+      }
+    </style>
+  </head>
+  <body>
     <!-- 
         onclick - атрибут, через який задається обробник події click
         Як значення цього атрибута використовується JavaScript-код, який виконується під час виникнення події
     -->
-    <div onclick="alert('Спрацював обробник події')">
-        Click me
-    </div>
-</body>
+
+    <div id="box"></div>
+
+    <div
+      onclick="
+        let box = document.querySelector('box');
+        box.style.backgroundColor = 'green';
+        box.textContent = txt;
+      "
+    ></div>
+
+    <div onclick="alert('Спрацював обробник події')">Click me</div>
+
+    <script>
+      let txt = "TEXT EXEMP!!!!";
+    </script>
+  </body>
 </html>
