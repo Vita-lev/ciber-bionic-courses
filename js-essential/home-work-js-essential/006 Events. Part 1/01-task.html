@@ -1,23 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 01</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <button id="testBtn">Test Button</button>
     <script>
-        /*
+      /*
         Завдання:
         Додайте для кнопки testBtn обробник на подію click.
         Обробник має виводити на екран повідомлення Hello world.
         Додайте обробник трьома різними способами.
         */
-    </script>
-</body>
+      // перший спосіб
+      //   let button = document.querySelector("#testBtn");
+      //   button.onclick = function () {
+      //     alert("Hello World");
+      //   };
 
+      // другий спосіб
+      //   let button = document.querySelector("#testBtn");
+      //   button.addEventListener("click", function () {
+      //     alert("Hello world");
+      //   });
+
+      // третій спосіб
+      function showMessage() {
+        alert("Hello world");
+      }
+
+      let button = document.querySelector("#testBtn");
+      button.addEventListener("click", showMessage);
+    </script>
+  </body>
 </html>
