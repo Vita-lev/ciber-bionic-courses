@@ -11,16 +11,30 @@
     <input id="radius" type="text" />
     <input id="height" type="text" />
 
-    <button>Розрахувати</button>
+    <button id="btn">Розрахувати</button>
+    <p id="sumVolume"></p>
     <script>
       //   let radius = document.querySelector("#radius");
-      let radius = Number(document.querySelector("#radius").value);
+
+      let btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", function () {
+        let radius = Number(document.querySelector("#radius").value);
+        let height = Number(document.querySelector("#height").value);
+
+        let volume = Math.PI * radius * radius * height;
+
+        let sumVolume = document.querySelector("#sumVolume");
+
+        sumVolume.innerHTML = volume;
+      });
+
       /*
         Завдання:
         Напишіть сценарій, який вираховує об'єм циліндра за параметрами,
         які користувач вводить.
         Для розрахунку використовуйте формулу V = π * r у квадраті * h.
-        Розмістіть на сторінці два поля введення: перше для радіуса 
+        Розмістіть на сторінці два поля введення: перше для радіуса
         циліндра, друге для висоти циліндра.
         Об'єм циліндра виведіть у тіло сторінки.
         */
