@@ -83,8 +83,24 @@
       const btn = document.querySelector("#btn");
       const out = document.querySelector(".out");
 
-      //body.addEventListener("click", () => buttonClick("Body"), true);
+      //   body.addEventListener("click", () => buttonClick("Body"), true);
       btn.addEventListener("click", showPhone);
+
+      btn.addEventListener(
+        "click",
+        function () {
+          console.log("Capturing");
+        },
+        true,
+      );
+
+      btn.addEventListener(
+        "click",
+        function () {
+          console.log("Bubling");
+        },
+        false,
+      );
 
       function buttonClick(item) {
         out.innerHTML += `
