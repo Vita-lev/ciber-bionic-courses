@@ -1,21 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 01</title>
-</head>
 
-<body>
-    <button>Click me!</button>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .out {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .item {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid red;
+        border-radius: 10px;
+      }
+      .item img {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="btn">Show all</button>
+    <input type="text" /> <button>Search</button>
+
+    <span>
+      <input type="checkbox" />
+      Blue
+    </span>
+    <span>
+      <input type="checkbox" />
+      Green
+    </span>
+    <span>
+      <input type="checkbox" />
+      Yellow
+    </span>
+    <div class="out"></div>
+
     <script>
-        /*
-        Завдання:
-        Додайте для кнопки два обробники: один має спрацювати у фазі capturing, другий – у фазі bubbling.
-        */
-    </script>
-</body>
+      const items = [
+        {
+          img: "https://img.jabko.ua/image/cache/catalog/products/2025/09/092244/tghn-(1)-1397x1397.png.webp",
+          name: "Iphone 17",
+          description: "Apple iPhone 17 256GB (Black) (e-Sim)",
+          price: "38 999 грн",
+        },
+        {
+          img: "https://img.jabko.ua/image/cache/catalog/products/2025/09/092244/tghn-(1)-1397x1397.png.webp",
+          name: "Iphone 17",
+          description: "Apple iPhone 17 256GB (Black) (e-Sim)",
+          price: "38 999 грн",
+        },
+        {
+          img: "https://img.jabko.ua/image/cache/catalog/products/2025/09/092244/tghn-(1)-1397x1397.png.webp",
+          name: "Iphone 17",
+          description: "Apple iPhone 17 256GB (Black) (e-Sim)",
+          price: "38 999 грн",
+        },
+        {
+          img: "https://img.jabko.ua/image/cache/catalog/products/2025/09/092244/tghn-(1)-1397x1397.png.webp",
+          name: "Iphone 17",
+          description: "Apple iPhone 17 256GB (Black) (e-Sim)",
+          price: "38 999 грн",
+        },
+        {
+          img: "https://img.jabko.ua/image/cache/catalog/products/2025/09/092244/tghn-(1)-1397x1397.png.webp",
+          name: "Iphone 17",
+          description: "Apple iPhone 17 256GB (Black) (e-Sim)",
+          price: "38 999 грн",
+        },
+      ];
 
+      const body = document.querySelector("body");
+      const btn = document.querySelector("#btn");
+      const out = document.querySelector(".out");
+
+      //body.addEventListener("click", () => buttonClick("Body"), true);
+      btn.addEventListener("click", showPhone);
+
+      function buttonClick(item) {
+        out.innerHTML += `
+        <div class="item">
+          <img src="${item.img}"/>  
+          <h2>${item.name}</h2>  
+          <p>${item.description}</p>
+          <p><b>${item.price}</b></p>
+        </div>
+        `;
+      }
+
+      function showPhone() {
+        for (let i = 0; i < items.length; i++) {
+          buttonClick(items[i]);
+        }
+      }
+
+      // buttonClick(items[0]);
+      //   console.log(btn);
+
+      /*
+          Завдання:
+          Додайте для кнопки два обробники: один має спрацювати у
+          фазі capturing, другий – у фазі bubbling.
+          */
+    </script>
+  </body>
 </html>
