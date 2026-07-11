@@ -1,41 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 01</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div id="autput"></div>
     <script>
-        /*
-        Завдання:
-        Виконайте рефакторинг коду. Зробіть так, щоб об'єкти створювалися не через літерали, а через функцію конструктор.
-        */
+      /*
+          Завдання:
+          Виконайте рефакторинг коду. Зробіть так, щоб об'єкти
+           створювалися не через літерали, а через функцію конструктор.
+          */
 
-        let user1 = {
-            firstName: "Ivan",
-            lastName: "Ivanov",
-            
-            show: function () {
-                console.log(this.firstName + " " + this.lastName);
-            }
-        }
+      //   let user1 = {
+      //     firstName: "Ivan",
+      //     lastName: "Ivanov",
 
-        let user2 = {
-            firstName: "Olga",
-            lastName: "Petrova",
-            
-            show: function () {
-                console.log(this.firstName + " " + this.lastName);
-            }
-        }
+      //     show: function () {
+      //       console.log(this.firstName + " " + this.lastName);
+      //     },
+      //   };
 
-        user1.show();
-        user2.show();
+      //   let user2 = {
+      //     firstName: "Olga",
+      //     lastName: "Petrova",
+
+      //     show: function () {
+      //       console.log(this.firstName + " " + this.lastName);
+      //     },
+      //   };
+
+      //   user1.show();
+      //   user2.show();
+
+      function User(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+        this.show = function () {
+          const p = document.createElement("p");
+          p.textContent = this.firstName + " " + this.lastName;
+
+          document.querySelector("#autput").append(p);
+        };
+      }
+
+      let user1 = new User("Ivan", "Ivanov");
+      let user2 = new User("Olga", "Petrova");
+      user1.show();
+      user2.show();
     </script>
-</body>
-
+  </body>
 </html>
