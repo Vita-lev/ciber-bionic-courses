@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <di class="autput"></di>
+    <div class="autput"></div>
     <script>
       /*
         Завдання:
@@ -22,6 +22,8 @@
 
         this.showContactInfo = function () {
           const p = document.createElement("p");
+          p.textContent =
+            "Мій логін " + this.login + ", Мій email" + this.email;
         }; // this.showContactInfo = function () {
         //   console.log("Мій логін " + this.login + ", мій email " + this.email);
         // };
