@@ -8,7 +8,16 @@
   </head>
 
   <body>
-    <div class="autput"></div>
+    <p>
+      <b style="color: blue">Login:</b> <span class="autput">xxxx</span
+      ><br /><button id="btn1">Show</button><button id="btn3">Reset</button>
+    </p>
+    <hr />
+    <p>
+      <b style="color: blue">Email:</b> <span class="autput1">xxxx</span
+      ><br /><button id="btn2">Show email</button>
+    </p>
+
     <script>
       /*
         Завдання:
@@ -32,8 +41,46 @@
       let user1 = new User("admin", "admin@example.com");
       let user2 = new User("user", "user@example.com");
 
-      user1.showContactInfo();
-      user2.showContactInfo();
+      //   user1.showContactInfo();
+      //   user2.showContactInfo();
+
+      const users = [
+        {
+          login: "admin",
+          email: "admin@example.com",
+        },
+        {
+          login: "admin 2",
+          email: "admin2@example.com",
+        },
+        {
+          login: "admin 4",
+          email: "admin4@example.com",
+        },
+        {
+          login: "admin 5",
+          email: "admin5@example.com",
+        },
+      ];
+
+      console.log(users[3].login);
+
+      let btnLogin = document.querySelector("#btn1");
+      let btnEmail = document.querySelector("#btn2");
+      let btnReset = document.querySelector("#btn3");
+      let autput = document.querySelector(".autput");
+      let autput1 = document.querySelector(".autput1");
+
+      btnLogin.addEventListener("click", () => {
+        console.log(users[3].login);
+        autput.innerHTML = users[3].login;
+      });
+
+      btnEmail.addEventListener("click", () => {});
+
+      btnReset.addEventListener("click", () => {
+        autput.innerHTML = "xxxx";
+      });
     </script>
   </body>
 </html>
