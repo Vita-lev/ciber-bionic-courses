@@ -15,7 +15,8 @@
     <hr />
     <p>
       <b style="color: blue">Email:</b> <span class="autput1">xxxx</span
-      ><br /><button id="btn2">Show email</button>
+      ><br /><button id="btn2">Show email</button
+      ><button id="btn4">Reset</button>
     </p>
 
     <script>
@@ -68,6 +69,7 @@
       let btnLogin = document.querySelector("#btn1");
       let btnEmail = document.querySelector("#btn2");
       let btnReset = document.querySelector("#btn3");
+      let btnReset1 = document.querySelector("#btn4");
       let autput = document.querySelector(".autput");
       let autput1 = document.querySelector(".autput1");
 
@@ -76,10 +78,17 @@
         autput.innerHTML = users[3].login;
       });
 
-      btnEmail.addEventListener("click", () => {});
+      btnEmail.addEventListener("click", () => {
+        console.log(users[3].email);
+        autput1.innerHTML = users[3].email;
+      });
 
       btnReset.addEventListener("click", () => {
         autput.innerHTML = "xxxx";
+      });
+
+      btnReset1.addEventListener("click", () => {
+        autput1.innerHTML = "xxxx";
       });
     </script>
   </body>
