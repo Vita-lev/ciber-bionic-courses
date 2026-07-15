@@ -75,7 +75,7 @@
     <script>
       /*
         Завдання:
-        Вивчіть реалізацію цього прикладу. 
+        Вивчіть реалізацію цього прикладу.
         Застосуйте прототипи, де це можливо.
         */
       let taskNameInput = document.querySelector("#task-name-input");
@@ -106,28 +106,28 @@
         this.text = text;
         this.isDone = false;
         this.div = null;
-
-        this.createIn = function (element) {
-          this.div = document.createElement("div");
-          this.div.classList.add("task");
-
-          let input = document.createElement("input");
-          input.addEventListener("click", () => this.changeState(this.div));
-          input.type = "checkbox";
-
-          let p = document.createElement("p");
-          p.innerText = this.text;
-
-          this.div.append(input);
-          this.div.append(p);
-          element.append(this.div);
-        };
-
-        this.changeState = function (element) {
-          this.isDone = !this.isDone;
-          element.classList.toggle("completed");
-        };
       }
+
+      Task.prototype.createIn = function (element) {
+        this.div = document.createElement("div");
+        this.div.classList.add("task");
+
+        let input = document.createElement("input");
+        input.addEventListener("click", () => this.changeState(this.div));
+        input.type = "checkbox";
+
+        let p = document.createElement("p");
+        p.innerText = this.text;
+
+        this.div.append(input);
+        this.div.append(p);
+        element.append(this.div);
+      };
+
+      Task.prototype.changeState = function (element) {
+        this.isDone = !this.isDone;
+        element.classList.toggle("completed");
+      };
     </script>
   </body>
 </html>
