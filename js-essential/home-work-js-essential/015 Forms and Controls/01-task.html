@@ -1,51 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 01</title>
     <style>
-        .form-grop {
-            margin: 4px;
-        }
+      .form-grop {
+        margin: 4px;
+      }
 
-        .form-grop label {
-            width: 75px;
-            display: inline-block;
-        }
+      .form-grop label {
+        width: 75px;
+        display: inline-block;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <form >
-        <div class="form-grop">
-            <label>Логін</label>
-            <input type="text" name="loginInput">
-        </div>
-        <div class="form-grop">
-            <label>Пароль</label>
-            <input type="password" name="passwordInput">
-        </div>
-        <div class="form-grop">
-            <label>Ім'я</label>
-            <input type="text" name="nameInput">
-        </div>
-        <div class="form-grop">
-            <label>Прізвище</label>
-            <input type="text" name="lastNameInput">
-        </div>
-        <div class="form-grop">
-            <input type="button" value="Показати значення">
-        </div>
+  <body>
+    <form>
+      <div class="form-grop">
+        <label>Логін</label>
+        <input type="text" name="loginInput" />
+      </div>
+      <div class="form-grop">
+        <label>Пароль</label>
+        <input type="password" name="passwordInput" />
+      </div>
+      <div class="form-grop">
+        <label>Ім'я</label>
+        <input type="text" name="nameInput" />
+      </div>
+      <div class="form-grop">
+        <label>Прізвище</label>
+        <input type="text" name="lastNameInput" />
+      </div>
+      <div class="form-grop">
+        <input type="button" value="Показати значення" />
+      </div>
     </form>
     <script>
-        /*
-        Завдання:
-        Під час натискання на кнопку "Показати значення", використовуючи цикл for, виведіть значення всіх елементів керування input (крім input type=button) на консоль.
-        */
-    </script>
-</body>
+      const btn = document.querySelector('input[type="button"]');
 
+      const inputs = document.querySelectorAll("input");
+
+      //   btn.addEventListener("click", function () {
+      //     // for(let i = 0; i < inputs.length; i++)
+      //   )};
+
+      btn.addEventListener("click", function () {});
+
+      console.log(inputs[0].values);
+      console.log(inputs[1].values);
+      console.log(inputs[2].values);
+      console.log(inputs[3].values);
+      console.log(inputs[4].values);
+
+      /*
+          Завдання:
+          Під час натискання на кнопку "Показати значення",
+          використовуючи цикл for, виведіть значення всіх елементів
+          керування input (крім input type=button) на консоль.
+          */
+    </script>
+  </body>
 </html>
