@@ -44,11 +44,17 @@
 
       const inputs = document.querySelectorAll("input");
 
-      btn.addEventListener("click", function () {
-        for (let i = 0; i < inputs.length; i++)
-          if (inputs[i].type !== "button") {
-            console.log(inputs[i].value);
+      btn.addEventListener("click", () => {
+        // for (let i = 0; i < inputs.length; i++)
+        //   if (inputs[i].type !== "button") {
+        //     console.log(inputs[i].value);
+        //   }
+
+        inputs.forEach((input) => {
+          if (input.type !== "button") {
+            console.log(input.value);
           }
+        });
       });
 
       /*
