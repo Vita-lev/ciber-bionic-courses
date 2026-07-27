@@ -227,6 +227,11 @@
           this.listElement.children[id].classList.add("selected");
         }
 
+        updateSelected() {
+          this.listElement.children[selectedUserIndex].textContent =
+            this.selectedData.name.first + " " + this.selectedData.name.last;
+        }
+
         deselectAll() {
           for (let i = 0; i < this.listElement.children.length; i++) {
             const child = this.listElement.children[i];
@@ -287,7 +292,7 @@
 
         selectedUserIndex = Number(e.target.dataset.index);
 
-        const userNumber = e.target.dataset.index;
+        // const userNumber = e.target.dataset.index;
         listService.select(selectedUserIndex);
         formService.fillForm(listService.selectedData);
       });
@@ -299,6 +304,8 @@
         }
         if (confirm("Ви дійсно хочете зберігти зміни?")) {
           formService.saveForm();
+
+          listService.updateSelected();
 
           message.innerHTML = `
             <h3>Дані збережено!</h3>
