@@ -212,6 +212,7 @@
         event.preventDefault();
 
         formService.saveForm();
+        listService.updateSelectedItem();
       });
 
       // Клас для виведення інформації в UL.
@@ -258,6 +259,15 @@
           if (index != -1) {
             this.listElement.children[index].remove();
             this.data.splice(index, 1);
+          }
+        }
+
+        updateSelectedItem() {
+          const index = this.data.indexOf(this.selectedData);
+
+          if (index != -1) {
+            this.listElement.children[index].textContent =
+              this.selectedData.name.first + " " + this.selectedData.name.last;
           }
         }
       }
@@ -324,6 +334,8 @@
       deleteButton.addEventListener("click", function () {
         listService.deleteSelectedItem();
         formService.resetForm();
+
+        console.log(users);
       });
     </script>
   </body>
