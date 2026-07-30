@@ -71,7 +71,14 @@
       </div>
       <div class="form-group">
         <label>Номер кредитної картки</label>
-        <input type="text" name="creditCard" />
+        <input
+          type="text"
+          name="creditCard"
+          data-val="true"
+          data-required="Введіть номер картки"
+          data-pattern="\\d{4} \\d{4} \\d{4} \\d{4}"
+          data-error-label="creditCardErrorLabel"
+        />
         <span class="error" id="creditCardErrorLabel">Помилка</span>
       </div>
       <div class="form-group">
