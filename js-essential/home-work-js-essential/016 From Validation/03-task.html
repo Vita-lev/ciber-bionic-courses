@@ -43,6 +43,7 @@
       <div class="form-group">
         <label>Email</label>
         <input type="email" name="emailInput" required />
+        <span id="emailMessage"></span>
       </div>
       <div class="form-group">
         <label>Пароль</label>
@@ -75,6 +76,22 @@
 
     <script>
       const form = document.forms[0];
+
+      const emailMessage = document.querySelector("#emailMessage");
+
+      form.emailInput.addEventListener("input", function () {
+        const errorEmail = [
+          "admin@example.com",
+          "superuser@example.com",
+          "user@example.com",
+        ];
+
+        if (errorEmail.includes(form.emailInput.value)) {
+          emailMessage.textContent = "Цец Email заборонений";
+        } else {
+          emailMessage.textContent = "";
+        }
+      });
 
       form.addEventListener("submit", function (e) {
         alert("Форму відправлено");
