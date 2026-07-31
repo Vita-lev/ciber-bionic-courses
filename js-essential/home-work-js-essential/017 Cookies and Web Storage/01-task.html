@@ -1,33 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 01</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <form>
-        <input type="radio" name="color" value="#ffd800" /> Orange
-        <input type="radio" name="color" value="#5ade54" /> Green
-        <input id="saveButton" type="button" value="Зберегти" />
+      <input type="radio" name="color" value="#ffd800" /> Orange
+      <input type="radio" name="color" value="#5ade54" /> Green
+      <input id="saveButton" type="button" value="Зберегти" />
     </form>
 
     <script>
-        /*
+      /*
             Завдання:
-            Додайте можливість зберегти вибраний колір сторінки у cookies терміном на 1 тиждень.
-            Додайте відновлення вибраного кольору з cookies, якщо вони є, після завантаження документа.
+            Додайте можливість зберегти вибраний колір сторінки у cookies терміном
+             на 1 тиждень.
+            Додайте відновлення вибраного кольору з cookies, 
+            якщо вони є, після завантаження документа.
         */
-       
-        document.querySelector("#saveButton").addEventListener("click", function () {
-            const form = document.forms[0];
-            let selectedColor = form.color.value;
-            document.body.style.backgroundColor = selectedColor;
-        });
-    </script>
-</body>
 
+      document
+        .querySelector("#saveButton")
+        .addEventListener("click", function () {
+          const form = document.forms[0];
+          let selectedColor = form.color.value;
+          document.body.style.backgroundColor = selectedColor;
+
+          document.cookie = `color=${selectedColor}; max-age=604800`;
+
+          let cookies = document.cookie;
+          console.log(cookies);
+
+          document.cookie.split("=")[1];
+        });
+
+      let savedColor = document.cookie.split("=")[1];
+
+      if (savedColor) {
+        document.body.style.backgroundColor = savedColor;
+      }
+    </script>
+  </body>
 </html>
