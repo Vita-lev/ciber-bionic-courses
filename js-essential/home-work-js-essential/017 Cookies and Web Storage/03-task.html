@@ -1,82 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 03</title>
 
     <style>
-        .form-group {
-            margin: 4px;
-        }
+      .form-group {
+        margin: 4px;
+      }
 
-        .form-group label {
-            width: 75px;
-            display: inline-block;
-        }
+      .form-group label {
+        width: 75px;
+        display: inline-block;
+      }
+      td {
+        min-width: 80px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
-
+  <body>
     <form name="writeForm">
-        <div class="form-group">
-            <label>Ключ</label>
-            <input type="text" name="keyInput" required>
-        </div>
-        <div class="form-group">
-            <label>Значення</label>
-            <input type="text" name="valueInput" required>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Запис">
-        </div>
+      <div class="form-group">
+        <label>Ключ</label>
+        <input type="text" name="keyInput" required />
+      </div>
+      <div class="form-group">
+        <label>Значення</label>
+        <input type="text" name="valueInput" required />
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Запис" />
+      </div>
     </form>
 
-    <br>
+    <br />
 
     <form name="readForm">
-        <div class="form-group">
-            <label>Ключ</label>
-            <input type="text" name="keyInput" required>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Читання">
-        </div>
+      <div class="form-group">
+        <label>Ключ</label>
+        <input type="text" name="keyInput" required />
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Читання" />
+        <input id="btnRemove" type="button" value="Видалити все" />
+        <input id="btnShowAll" type="button" value="Показати все" />
+      </div>
     </form>
-
+    <br />
+    <hr />
+    <table border="1">
+      <thead>
+        <tr>
+          <td><b>KEY</b></td>
+          <td><b>VALUE</b></td>
+        </tr>
+      </thead>
+      <tbody class="out"></tbody>
+    </table>
     <script>
-        /*
+      /*
         Завдання:
         Додайте на сторінку кнопку "Показати все". Під час натискання на цю кнопку на сторінці
         має з'явитися або оновитися таблиця з вмістом localStorrage. Перша колонка таблиці – ключ, друга – значення.
         
         Додайте кнопку "Очистити localStorage" на сторінку. Під час натискання на кнопку localStorage має бути очищений.
         */
-        document.forms.writeForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const form = document.forms.writeForm;
+      const btnRemove = document.querySelector("#btnRemove");
+      const btnShowAll = document.querySelector("#btnShowAll");
+      const out = document.querySelector(".out");
 
-            let key = form.keyInput.value;
-            let value = form.valueInput.value;
+      document.forms.writeForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const form = document.forms.writeForm;
 
-            localStorage.setItem(key, value); 
-            form.reset();
-        });
+        let key = form.keyInput.value;
+        let value = form.valueInput.value;
 
-        document.forms.readForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+        localStorage.setItem(key, value);
+        form.reset();
+      });
 
-            const form = document.forms.readForm;
-            let key = form.keyInput.value;
+      document.forms.readForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-            let value = localStorage.getItem(key); 
-            alert(value);
-        });
+        const form = document.forms.readForm;
+        let key = form.keyInput.value;
+
+        let value = localStorage.getItem(key);
+        alert(value);
+      });
+
+      btnShowAll.addEventListener("click", () => {
+        out.innerHTML = "";
+
+        for (let i = 0; i < localStorage.length; i++) {
+          let tr = document.createElement("tr");
+          let td = document.createElement("td");
+          let td2 = document.createElement("td");
+
+          td.innerHTML = localStorage.key(i);
+          td2.innerHTML = localStorage.getItem(localStorage.key(i));
+
+          tr.append(td, td2);
+          out.append(tr);
+        }
+      });
+
+      btnRemove.addEventListener("click", () => {
+        localStorage.clear();
+        out.innerHTML = "";
+        alert("localStorage очищен");
+      });
     </script>
-</body>
-
+  </body>
 </html>

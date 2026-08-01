@@ -22,27 +22,32 @@
             Додайте відновлення вибраного кольору з cookies, 
             якщо вони є, після завантаження документа.
         */
-
-      document
-        .querySelector("#saveButton")
-        .addEventListener("click", function () {
-          const form = document.forms[0];
-          let selectedColor = form.color.value;
-          document.body.style.backgroundColor = selectedColor;
-
-          document.cookie = `color=${selectedColor}; max-age=604800`;
-
-          let cookies = document.cookie;
-          console.log(cookies);
-
-          document.cookie.split("=")[1];
-        });
-
       let savedColor = document.cookie.split("=")[1];
+      let button = document.querySelector("#saveButton");
 
       if (savedColor) {
+        const form = document.forms[0];
         document.body.style.backgroundColor = savedColor;
+
+        if (savedColor == "#ffd800") {
+          form[0].checked = true;
+        } else {
+          form[1].checked = true;
+        }
       }
+
+      button.addEventListener("click", function () {
+        const form = document.forms[0];
+        let selectedColor = form.color.value;
+        document.body.style.backgroundColor = selectedColor;
+
+        document.cookie = `color=${selectedColor}; max-age=604800`;
+
+        let cookies = document.cookie;
+        console.log(cookies);
+
+        document.cookie.split("=")[1];
+      });
     </script>
   </body>
 </html>
