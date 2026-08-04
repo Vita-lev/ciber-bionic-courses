@@ -1,32 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 05</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        /*
+      /*
         Завдання:
-        Внесіть правки до коду. Не змінюючи послідовність інструкцій у функції operation, зробіть так,
-        щоб рядок "Звільнення ресурсів" виводився щоразу, коли запускалася функція operation.
+        Внесіть правки до коду. Не змінюючи послідовність інструкцій у функції
+         operation, зробіть так,
+        щоб рядок "Звільнення ресурсів" виводився щоразу, коли запускалася функція
+         operation.
         */
 
-        function operation() {
-            console.log("Виділення ресурсів");
-            return "Результат операції";
-            console.log("Звільнення ресурсів");
+      function operation() {
+        console.log("Виділення ресурсів");
+
+        try {
+          return "Результат операції";
+        } finally {
+          console.log("Звільнення ресурсів");
         }
+      }
 
-        operation();
-        operation();
-        operation();
+      operation();
+      operation();
+      operation();
 
+      console.log(operation());
     </script>
-</body>
-
+  </body>
 </html>
