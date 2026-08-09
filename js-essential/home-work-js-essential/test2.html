@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .out {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="out"></div>
+
+    <script>
+      fetch("https://rickandmortyapi.com/api/character")
+        .then((response) => response.json())
+        .then((person) => {
+          console.log(person);
+          console.log(person.results[3]);
+
+          document.querySelector(".out").innerHTML = `
+          
+          <h2>${person.results[3].name}</h2>
+    
+
+          <img src="${person.results[3].image}" />
+
+          <p>статус: ${person.results[3].status}</p>
+
+          <p>раса: ${person.results[3].species}</p>
+          `;
+        });
+    </script>
+  </body>
+</html>

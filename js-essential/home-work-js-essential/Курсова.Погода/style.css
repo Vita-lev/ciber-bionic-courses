@@ -1,0 +1,55 @@
+.view-switch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.view-switch button {
+  padding: 10px 20px;
+  border: 1px solid #333;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-switch button.active {
+  background: #333;
+  color: white;
+}
+
+.forecast-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.forecast-controls select,
+.forecast-controls button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.forecast-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.forecast-table th,
+.forecast-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.forecast-table img {
+  width: 50px;
+  vertical-align: middle;
+}
+
+.hidden {
+  display: none;
+}

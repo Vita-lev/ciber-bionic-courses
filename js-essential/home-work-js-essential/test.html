@@ -3,46 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test</title>
+    <title>Document</title>
+    <style>
+      .out {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
-    <button id="btn">play</button>
-    <button id="btn2">2+2=?</button>
-    <button id="btn3">login</button>
+    <div class="out"></div>
 
     <script>
-      let btn = document.querySelector("#btn");
-      let btn2 = document.querySelector("#btn2");
-      let btn3 = document.querySelector("#btn3");
+      const cities = [
+        {
+          name: "Київ",
+          id: 703448,
+          lang: "ua",
+        },
+        {
+          name: "Лондон",
+          id: 2643743,
+          lang: "en",
+        },
+        {
+          name: "Нью-Йорк",
+          id: 5128638,
+          lang: "en",
+        },
+      ];
+      function showWheather(cities) {
+        fetch(
+          `https://api.openweathermap.org/data/2.5/weather?id=${cities.id}&appid=bf35cac91880cb98375230fb443a116f&units=metric&lang=${cities.lang}`,
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            let out = document.querySelector(".out");
 
-      btn.addEventListener("click", function () {
-        console.log("play");
-      });
-
-      btn2.addEventListener("click", function () {
-        console.log("2+2=" + (2 + 2));
-      });
-
-      btn3.addEventListener("click", login);
-
-      function login() {
-        console.log("Hai Vita");
+            out.innerHTML += `
+                <div class="item">
+                <h2>Місто: ${data.name}</h2>
+                <ul>
+                  <li>Погода: ${data.weather[0].description} <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" width="30"> </li>
+                  <li>Температура: ${Math.floor(data.main.temp)}°C</li>
+                  </ul>
+                </div>
+          `;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       }
 
-      function two(num) {
-        console.log(num);
-      }
-
-      two(4);
-
-      function name(text) {
-        console.log("hello " + text + "!");
-      }
-
-      name("Vita");
-      name("Sasha");
-
-      //   name("text");
+      cities.map((item) => showWheather(item));
     </script>
   </body>
 </html>

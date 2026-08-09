@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Прогноз погоди</h1>
+
+  <div class="temperature-switch">
+    <span>Температура:</span>
+
+    <button id="celsiusBtn" class="active">°C</button>
+    <button id="fahrenheitBtn">°F</button>
+  </div>
+
+  <div class="view-switch">
+    <button id="currentWeatherBtn" class="active">Поточна погода</button>
+
+    <button id="forecastBtn">Прогноз</button>
+  </div>
+
+  <div id="forecastControls" class="forecast-controls hidden">
+    <select id="citySelect">
+      <option value="703448">Київ</option>
+      <option value="2643743">Лондон</option>
+      <option value="5128638">Нью-Йорк</option>
+    </select>
+
+    <button id="showForecastBtn">Показати прогноз</button>
+  </div>
+
+  <div id="weather" class="weather"></div>
+
+  <div id="forecast" class="forecast hidden"></div>
+</div>
+
+<script type="module" src="js/app.js"></script>
