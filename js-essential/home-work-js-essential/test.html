@@ -5,10 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0 5px;
+        padding: 0;
+      }
+
+      .title {
+        text-align: center;
+        background-color: azure;
+        padding: 20px;
+      }
+
       .out {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+
+        /* display: grid;
+        grid-template-columns: repeat(3, 1fr); */
         gap: 20px;
+        background-color: rgb(43, 43, 39);
+        padding: 15px 10px;
+        color: aliceblue;
       }
 
       li {
@@ -18,6 +35,7 @@
     </style>
   </head>
   <body>
+    <h1 class="title">OpenWeather API</h1>
     <div class="out"></div>
 
     <script>
