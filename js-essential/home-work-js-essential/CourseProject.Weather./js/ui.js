@@ -1,34 +1,10 @@
-const API_KEY = "9b9c175ab014e4bdbe09435126546e2e";
-
-const cities = ["Kyiv", "London", "New York"];
-
-const out = document.querySelector(".out");
-const title = document.querySelector(".title");
-
-const unitButtons = document.querySelectorAll(".unit-btn");
-const languageButtons = document.querySelectorAll(".language-btn");
-
-
-const WeatherAPI = {
-
-    getWeather(city) {
-
-        return fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
-        )
-        .then(response => response.json());
-    }
-
-};
-
-
 const UI = {
 
     currentUnit: "C",
 
     currentLanguage: "uk",
 
-    renderWeather(data) {
+    renderWeather(data, out) {
 
         let temperature = data.main.temp;
 
@@ -85,70 +61,6 @@ const UI = {
             </div>
         `;
     }
-
 };
 
-
-let weatherData = [];
-
-
-
-
-cities.forEach(city => {
-
-    WeatherAPI.getWeather(city)
-        .then(data => {
-
-            weatherData.push(data);
-
-            UI.renderWeather(data);
-
-        });
-
-});
-
-
-
-
-unitButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        UI.currentUnit = button.dataset.unit;
-
-        out.innerHTML = "";
-
-        weatherData.forEach(data => {
-            UI.renderWeather(data);
-        });
-
-    });
-
-});
-
-
-//////////
-
-languageButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        UI.currentLanguage = button.dataset.language;
-
-        if (UI.currentLanguage === "uk") {
-            title.textContent = "Прогноз погоди";
-        }
-
-        if (UI.currentLanguage === "en") {
-            title.textContent = "Weather forecast";
-        }
-
-        out.innerHTML = "";
-
-        weatherData.forEach(data => {
-            UI.renderWeather(data);
-        });
-
-    });
-
-});
+export default UI;
