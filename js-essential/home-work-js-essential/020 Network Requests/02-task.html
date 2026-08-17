@@ -1,36 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 02</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <form action="" id="form">
+      <label for=""
+        >Title:
+        <input id="title" type="text" />
+      </label>
+
+      <br /><br />
+
+      <label for="">
+        Body:
+        <textarea id="body" name=""></textarea>
+      </label>
+
+      <br /><br />
+
+      <button id="update">Оновити</button>
+    </form>
+
+    <div id="output"></div>
     <script>
-        /*
-        Завдання:
-        Напишіть сценарій, який оновлюватиме сутність post з властивостями
-        id: 1,
-        title: 'foo',
-        body: 'bar',
-        userId: 1,
+      const url = "https://jsonplaceholder.typicode.com/posts/1";
 
-        Створіть форму з полем введення для значення властивості title та полем введення для значення властивості body.
+      let form = document.querySelector("#form");
+      let bodyInput = document.querySelector("#body");
+      let titleInput = document.querySelector("#title");
+      let output = document.querySelector("#output");
 
-        Значення для властивостей title та body отримайте від користувача.
-        Значення id та userId мають дорівнювати 1. Виводити їх у формі не потрібно.
-        Під час завантаження сценарію заповніть форму даними, які були отримані під час обробки GET-запиту на https://jsonplaceholder.typicode.com/posts/1.
+      fetch(url)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Помилка: " + response.status);
+          }
+          return response.json();
+        })
 
-        Адреса для надсилання запиту
-        https://jsonplaceholder.typicode.com/posts/1.
+        .then((data) => {
+          titleInput.value = data.title;
+          bodyInput.value = data.body;
+        })
+        .catch((error) => {
+          output.textContent = error.message;
+        });
 
-        Для оновлення сутності скористайтесь PUT-запитом https://jsonplaceholder.typicode.com/posts/1. Опрацюйте відповідь
-        і виведіть інформацію про помилку або успішно завершену операцію.
-        */
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let post = {
+          id: 1,
+          title: titleInput.value,
+          body: bodyInput.value,
+          userId: 1,
+        };
+
+        // localStorage.setItem("post", JSON.stringify(post));
+
+        fetch(url, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(post),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Помилка: " + response.status);
+            }
+            return response.json();
+          })
+
+          .then((data) => {
+            // output.textContent = error.message;
+            output.textContent = "Пост успішно оновлено!";
+          })
+
+          .catch((error) => {
+            output.textContent = error.message;
+          });
+      });
+
+      //   let savePost = JSON.parse(localStorage.getItem("post"));
+
+      //   => response.json()
+      //   .then((data) => {
+      //     titleInput.value = data.title;
+      //     bodyInput.value = data.body;
+      //   });
+
+      /*
+                      Завдання:
+                      Напишіть сценарій, який оновлюватиме сутність post з властивостями
+                      id: 1,
+                      title: 'foo',
+                      body: 'bar',
+                      userId: 1,
+
+                      Створіть форму з полем введення для значення властивості title
+                      та полем введення для значення властивості body.
+
+                      Значення для властивостей title та body отримайте від користувача.
+                      Значення id та userId мають дорівнювати 1. Виводити їх у формі не потрібно.
+                      Під час завантаження сценарію заповніть форму даними, які були
+                      отримані під час обробки
+                      GET-запиту на https://jsonplaceholder.typicode.com/posts/1.
+
+                      Адреса для надсилання запиту
+                      https://jsonplaceholder.typicode.com/posts/1.
+
+                      Для оновлення сутності скористайтесь
+                       PUT-запитом https://jsonplaceholder.typicode.com/posts/1.
+                       Опрацюйте відповідь
+                      і виведіть інформацію про помилку або успішно завершену операцію.
+                      */
     </script>
-</body>
-
+  </body>
 </html>
