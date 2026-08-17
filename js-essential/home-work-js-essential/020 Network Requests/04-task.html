@@ -13,7 +13,7 @@
       fetch(url)
         .then((response) => response.json())
         .then((todos) => {
-          let table = document.createElement;
+          let table = document.createElement("table");
           table.border = "2";
 
           let headerRow = document.createElement("tr");
@@ -27,11 +27,13 @@
             <td>${todo.id}</td>
             <td>${todo.userId}</td>
             <td>${todo.title}</td>
-            <td>${todo.copleted}</td>
+            <td>${todo.completed}</td>
             `;
 
             table.appendChild(row);
           });
+
+          document.body.appendChild(table);
         })
         .catch((error) => console.log("Помилка:", error));
 
