@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Генератор тексту з Ollama (phi3)</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 2rem;
+      max-width: 900px;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    .config {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .config input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .input-group {
+      flex: 1;
+      min-width: 200px;
+    }
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      margin-bottom: 1rem;
+      resize: vertical;
+    }
+    .actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #333;
+      cursor: pointer;
+      background: white;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    button.primary {
+      background: #333;
+      color: white;
+    }
+    #status {
+      margin-bottom: 0.5rem;
+      color: #666;
+    }
+    #output {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1rem;
+      min-height: 200px;
+      max-height: 500px;
+      overflow: auto;
+      background: #f9f9f9;
+      white-space: pre-wrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    Додаткове завдання:
+    
+    1. Перейдіть на сайт https://ollama.ai/
+    2. Скачайте та встановіть клієнт Ollama
+    3. Запустіть Ollama сервер (зазвичай запускається автоматично)
+    4. У командному рядку запустіть "ollama pull phi3" і скачайте LLM модель phi3
+    5. Створіть веб-інтерфейс (HTML/CSS/JS) для генерації тексту через Ollama API
+    6. Використайте ендпоінт http://localhost:11434/api/generate для REST запитів
+    7. Реалізуйте потокове отримання відповіді (streaming) від моделі phi3
+    8. Додайте можливість змінювати модель через інтерфейс
+    9. Додайте кнопки для генерації, зупинки та очищення результату
+    
+    Примітка: Через обмеження CORS потрібно запускати через локальний веб-сервер
+    (python -m http.server 8000 або npx serve -l 8000), а не відкривати файл напряму.
+  -->
+  <h1>Генератор тексту з Ollama (phi3)</h1>
+
+  <div class="config">
+    <div class="input-group">
+      <label for="apiUrl">API URL</label>
+      <input id="apiUrl" type="text" value="http://localhost:11434/api/generate" />
+    </div>
+    <div class="input-group">
+      <label for="modelName">Модель</label>
+      <input id="modelName" type="text" value="phi3" />
+    </div>
+  </div>
+
+  <label for="prompt">Введіть ваш запит</label>
+  <textarea id="prompt" rows="4" placeholder="Наприклад: Що таке штучний інтелект?"></textarea>
+
+  <div class="actions">
+    <button id="runBtn" class="primary">Згенерувати</button>
+    <button id="stopBtn" disabled>Зупинити</button>
+    <button id="clearBtn">Очистити</button>
+  </div>
+
+  <div id="status">Готово</div>
+  <pre id="output"></pre>
+
+  <script src="./script.js"></script>
+</body>
+</html>

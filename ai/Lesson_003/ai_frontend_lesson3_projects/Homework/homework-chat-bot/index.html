@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Homework - Чат-бот з Ollama</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 2rem;
+      max-width: 900px;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    .config {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .config input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .input-group {
+      flex: 1;
+      min-width: 200px;
+    }
+    .chat-container {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1rem;
+      min-height: 400px;
+      max-height: 500px;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+      background: #f9f9f9;
+    }
+    .message {
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border-radius: 6px;
+    }
+    .message.user {
+      background: #e3f2fd;
+      margin-left: 2rem;
+    }
+    .message.assistant {
+      background: #f1f8e9;
+      margin-right: 2rem;
+    }
+    .message-header {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+    .message-content {
+      white-space: pre-wrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.9rem;
+    }
+    .input-area {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .input-area input {
+      flex: 1;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #333;
+      cursor: pointer;
+      background: white;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    button.primary {
+      background: #333;
+      color: white;
+    }
+    #status {
+      margin-bottom: 0.5rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    Домашнє завдання (Homework - Чат-бот з історією діалогу):
+    
+    1. Перейдіть на сайт https://ollama.ai/
+    2. Переконайтесь, що Ollama встановлена і запущена
+    3. У командному рядку запустіть "ollama pull llama2" або "ollama pull phi3" і скачайте LLM модель
+    4. Створіть веб-інтерфейс (HTML/CSS/JS) для чат-бота з Ollama API
+    5. Використайте ендпоінт http://localhost:11434/api/generate для REST запитів
+    6. Реалізуйте відображення історії діалогу (користувач і асистент)
+    7. Додайте можливість надсилати нові повідомлення
+    8. Реалізуйте потокове отримання відповіді (streaming) для відображення тексту поступово
+    9. Додайте можливість очистити історію діалогу
+    10. Зберігайте контекст розмови - передавайте всю історію діалогу в запиті до моделі
+    
+    Додаткові вимоги:
+    - Кожне повідомлення користувача та відповідь моделі мають відображатися в окремих блоках
+    - Під час генерації відповіді показуйте індикатор "Генерується..."
+    - Додайте можливість змінювати модель через інтерфейс
+    
+    Поради:
+    - Використовуйте масив для збереження історії діалогу
+    - Формат повідомлень може бути: {role: "user", content: "..."} або {role: "assistant", content: "..."}
+    - Для передачі контексту в Ollama API використовуйте поле "context" або зберігайте всю історію
+  -->
+  <h1>Homework: Чат-бот з Ollama</h1>
+
+  <div class="config">
+    <div class="input-group">
+      <label for="apiUrl">API URL</label>
+      <input id="apiUrl" type="text" value="http://localhost:11434/api/generate" />
+    </div>
+    <div class="input-group">
+      <label for="modelName">Модель</label>
+      <input id="modelName" type="text" value="llama2" />
+    </div>
+  </div>
+
+  <div id="status">Готово до розмови</div>
+  
+  <div id="chatContainer" class="chat-container"></div>
+
+  <div class="input-area">
+    <input id="messageInput" type="text" placeholder="Введіть ваше повідомлення..." />
+    <button id="sendBtn" class="primary">Надіслати</button>
+  </div>
+
+  <div class="actions">
+    <button id="clearBtn">Очистити історію</button>
+  </div>
+
+  <script>
+    // Тут додайте ваш JavaScript код
+    // Початковий код для реалізації чат-бота
+  </script>
+</body>
+</html>
+

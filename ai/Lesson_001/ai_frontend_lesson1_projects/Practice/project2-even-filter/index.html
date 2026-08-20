@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project 2 - Even Numbers Filter with AI</title>
+  <style>
+    body {{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 2rem;
+      max-width: 800px;
+    }}
+    .box {{
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }}
+    label {{
+      display: block;
+      margin-bottom: 0.5rem;
+    }}
+    input {{
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }}
+    button {{
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #333;
+      cursor: pointer;
+    }}
+    .result {{
+      margin-top: 1rem;
+      font-weight: bold;
+    }}
+  </style>
+</head>
+<body>
+  <!--
+    Завдання (Project 2 - Even Numbers Filter):
+
+    1. Створіть промпт англійською:
+       "You are an experienced JavaScript developer. Write a function that takes an array
+        of numbers and returns a new array with only even numbers. Provide an example HTML
+        page with an input for comma-separated numbers, a 'Filter' button and a result block.
+        Explain how the code works."
+
+    2. Скопіюйте згенеровану функцію та HTML-структуру.
+    3. Порівняйте її з кодом нижче:
+       - чи використовує ШІ метод filter?
+       - як він обробляє некоректне введення?
+       - чи є коментарі?
+
+    4. За потреби адаптуйте код під свої вимоги.
+    5. Додайте стилі з допомогою ШІ асистента.
+  -->
+  <h1>Project 2: Even Numbers Filter (AI-assisted)</h1>
+
+  <div class="box">
+    <label for="numbers-input">Введіть числа через кому (наприклад, 1, 2, 3, 4, 5):</label>
+    <input id="numbers-input" type="text" placeholder="1, 2, 3, 4, 5" />
+    <button id="filter-btn">Фільтрувати парні</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    // Приклад "згенерованої" функції для фільтрації парних чисел
+    function getEvenNumbers(numbers) {{
+      return numbers.filter(function (n) {{
+        return !Number.isNaN(n) && n % 2 === 0;
+      }});
+    }}
+
+    document.addEventListener("DOMContentLoaded", function () {{
+      const input = document.getElementById("numbers-input");
+      const button = document.getElementById("filter-btn");
+      const result = document.getElementById("result");
+
+      button.addEventListener("click", function () {{
+        const raw = input.value;
+        if (!raw.trim()) {{
+          result.textContent = "Введіть хоча б одне число.";
+          return;
+        }}
+
+        const numbers = raw
+          .split(",")
+          .map(x => x.trim())
+          .filter(x => x !== "")
+          .map(x => Number(x));
+
+        const evens = getEvenNumbers(numbers);
+        result.textContent = "Парні числа: " + (evens.length ? evens.join(", ") : "немає");
+      }});
+    }});
+  </script>
+</body>
+</html>

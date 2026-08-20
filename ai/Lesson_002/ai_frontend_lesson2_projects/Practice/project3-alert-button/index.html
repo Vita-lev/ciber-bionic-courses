@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project 3 - Simple Alert Button</title>
+  <style>
+    body {{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 2rem;
+      gap: 1rem;
+    }}
+    button {{
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }}
+  </style>
+</head>
+<body>
+  <!--
+    Завдання (Project 3 - Alert Button):
+
+    1. Створіть промпт:
+       "Generate a simple HTML page with a button that shows an alert with the text
+        'Hello from AI-generated code!' when clicked."
+
+    2. Скопіюйте код, який згенерує ШІ, і порівняйте його з прикладом нижче:
+       - чи є семантичні елементи?
+       - який текст використовується у кнопці?
+
+    3. Змініть промпт так, щоб:
+       - кнопка була іншого кольору;
+       - текст alert був українською;
+       - сторінка мала заголовок <h1> із поясненням, що код згенеровано за допомогою ШІ.
+  -->
+  <h1>Project 3: Проста кнопка з alert</h1>
+  <p>Натисніть кнопку нижче, щоб побачити повідомлення.</p>
+  <button id="hello-btn">Натисни мене</button>
+
+  <!-- Шаблон модального вікна (UI з прикладу, який може згенерувати ШІ) -->
+  <section id="modal" aria-hidden="true" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45);">
+    <div role="dialog" aria-modal="true" style="max-width:480px; margin:10% auto; background:#fff; padding:1rem; border-radius:12px;">
+      <h2 style="margin-top:0;">Приклад модалки</h2>
+      <p>Це приклад модального вікна, яке відкривається та закривається без бібліотек.</p>
+      <div style="display:flex; gap:0.5rem; justify-content:flex-end;">
+        <button id="close-modal">Закрити</button>
+      </div>
+    </div>
+  </section>
+  <div style="display:flex; gap:0.5rem;">
+    <button id="open-modal">Відкрити модалку</button>
+  </div>
+
+  <script>
+    document.getElementById("hello-btn").addEventListener("click", function () {{
+      alert("Hello from AI-generated code!");
+    }});
+
+    // Приклад невеликого UI-скрипта (шаблон, який часто генерує ШІ)
+    const modal = document.getElementById("modal");
+    const openBtn = document.getElementById("open-modal");
+    const closeBtn = document.getElementById("close-modal");
+
+    function setModalVisible(isVisible) {{
+      modal.style.display = isVisible ? "block" : "none";
+      modal.setAttribute("aria-hidden", isVisible ? "false" : "true");
+    }}
+
+    openBtn.addEventListener("click", () => setModalVisible(true));
+    closeBtn.addEventListener("click", () => setModalVisible(false));
+    modal.addEventListener("click", (e) => {{
+      // Закриття при кліку по фону
+      if (e.target === modal) setModalVisible(false);
+    }});
+
+    // -----------------------------
+    // Невеликий приклад тестування чистої функції
+    // Тестована функція: toggleState - повертає протилежне булеве значення
+    // (Промпт: "Створи приклад невеликих юніт-тестів з console.assert для простої
+    // функції toggleState (булеве -> протилежне), у форматі AAA.")
+    function toggleState(current) {{
+      return !current;
+    }}
+
+    // AAA: Arrange-Act-Assert
+    // Arrange
+    const s1 = true;
+    const s2 = false;
+    // Act
+    const t1 = toggleState(s1);
+    const t2 = toggleState(s2);
+    // Assert
+    console.assert(t1 === false, "toggleState(true) має повертати false");
+    console.assert(t2 === true, "toggleState(false) має повертати true");
+  </script>
+</body>
+</html>

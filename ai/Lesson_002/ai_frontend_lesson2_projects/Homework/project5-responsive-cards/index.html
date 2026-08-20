@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project 5 - Responsive Cards Layout</title>
+  <style>
+    /* Базові стилі сторінки */
+    body {{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 2rem;
+      max-width: 900px;
+    }}
+    /* Сітка з трьома колонками на десктопі */
+    .grid {{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }}
+    /* Перехід на одну колонку на вузьких екранах */
+    @media (max-width: 768px) {{
+      .grid {{
+        grid-template-columns: 1fr;
+      }}
+    }}
+    /* Стилі картки (каркас, відступи, легка тінь) */
+    .card {{
+      border-radius: 12px;
+      border: 1px solid #e2e2e2;
+      padding: 1.25rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    }}
+    .card h2 {{
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }}
+    .card p {{
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }}
+  </style>
+</head>
+<body>
+  <!--
+    Завдання (Project 5 - Responsive Cards):
+
+    1. Створіть промпт:
+       "Generate HTML and CSS for a responsive 3-card layout. On desktop it should show
+        3 cards in a row, and on mobile it should stack them in a single column. Use modern
+        CSS (flex or grid) and add minimal styling."
+
+    2. Порівняйте згенерований код з прикладом нижче:
+       - чи використав ШІ flex чи grid?
+       - як реалізована адаптивність (media queries, responsive units)?
+       - чи легко зрозуміти структуру?
+
+    3. Спробуйте змінити промпт, додавши:
+       - "Use only CSS Grid"
+       - "Make cards look like modern pricing cards"
+       і подивіться, як зміниться результат.
+
+    Пояснення:
+    - .grid створює трьохколоночну сітку за допомогою CSS Grid.
+    - @media (max-width: 768px) перемикає сітку на одну колонку для мобільних.
+    - .card стилізує окрему картку з рамкою, відступами і легкою тінню.
+  -->
+  <h1>Project 5: Адаптивні картки (CSS Grid)</h1>
+  <p>Приклад простої адаптивної сітки з трьома картками.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Картка 1</h2>
+      <p>Опис першої картки. Тут може бути короткий текст про послугу або продукт.</p>
+    </div>
+    <div class="card">
+      <h2>Картка 2</h2>
+      <p>Опис другої картки. Ви можете змінювати контент на свій розсуд.</p>
+    </div>
+    <div class="card">
+      <h2>Картка 3</h2>
+      <p>Опис третьої картки. Сітка залишиться адаптивною.</p>
+    </div>
+  </div>
+  <script>
+    // Домашнє завдання (Lesson 2):
+    // Згенеруй невелику чисту функцію-утиліту та тести самостійно.
+    //
+    // Варіанти функцій:
+    // - clamp(value, min, max)
+    // - formatPrice(num)
+    // - isInRange(value, min, max)
+    //
+    // Завдання:
+    // 1) Попроси ШІ згенерувати реалізацію обраної функції.
+    // 2) Додай unit-тести з console.assert у форматі AAA.
+    // 3) Перевір у консолі, що тести проходять; за потреби виправ код.
+    //
+    // Приклад промпта (встав у ШІ та заміни цей блок своїм кодом):
+    // "Створи чисту функцію clamp(value, min, max) на JavaScript і додай до неї
+    //  тести з console.assert у форматі Arrange-Act-Assert, включно з кейсом,
+    //  коли min > max має кидати помилку. Поверни лише JS-код для вставки у <script>."
+  </script>
+</body>
+</html>

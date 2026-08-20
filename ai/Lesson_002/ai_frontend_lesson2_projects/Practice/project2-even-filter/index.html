@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project 2 - Even Numbers Filter with AI</title>
+  <style>
+    body {{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 2rem;
+      max-width: 800px;
+    }}
+    .box {{
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }}
+    label {{
+      display: block;
+      margin-bottom: 0.5rem;
+    }}
+    input {{
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }}
+    button {{
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #333;
+      cursor: pointer;
+    }}
+    .result {{
+      margin-top: 1rem;
+      font-weight: bold;
+    }}
+  </style>
+</head>
+<body>
+  <!--
+    Завдання (Project 2 - Even Numbers Filter):
+
+    1. Створіть промпт англійською:
+       "You are an experienced JavaScript developer. Write a function that takes an array
+        of numbers and returns a new array with only even numbers. Provide an example HTML
+        page with an input for comma-separated numbers, a 'Filter' button and a result block.
+        Explain how the code works."
+
+    2. Скопіюйте згенеровану функцію та HTML-структуру.
+    3. Порівняйте її з кодом нижче:
+       - чи використовує ШІ метод filter?
+       - як він обробляє некоректне введення?
+       - чи є коментарі?
+
+    4. За потреби адаптуйте код під свої вимоги.
+    5. Додайте стилі з допомогою ШІ асистента.
+  -->
+  <h1>Project 2: Even Numbers Filter (AI-assisted)</h1>
+
+  <div class="box">
+    <label for="numbers-input">Введіть числа через кому (наприклад, 1, 2, 3, 4, 5):</label>
+    <input id="numbers-input" type="text" placeholder="1, 2, 3, 4, 5" />
+    <button id="filter-btn">Фільтрувати парні</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    // Повертає новий масив тільки з парними числами (не NaN)
+    function getEvenNumbers(numbers) {{
+      return numbers.filter(function (n) {{
+        return !Number.isNaN(n) && n % 2 === 0;
+      }});
+    }}
+
+    document.addEventListener("DOMContentLoaded", function () {{
+      const input = document.getElementById("numbers-input");
+      const button = document.getElementById("filter-btn");
+      const result = document.getElementById("result");
+
+      button.addEventListener("click", function () {{
+        const raw = input.value;
+        if (!raw.trim()) {{
+          result.textContent = "Введіть хоча б одне число.";
+          return;
+        }}
+
+        const numbers = raw
+          .split(",")
+          .map(x => x.trim())
+          .filter(x => x !== "")
+          .map(x => Number(x));
+
+        const evens = getEvenNumbers(numbers);
+        result.textContent = "Парні числа: " + (evens.length ? evens.join(", ") : "немає");
+      }});
+    }});
+
+    // -----------------------------
+    // Тести (console.assert) - AAA
+    // (Промпт: "Згенеруй unit-тести для функції getEvenNumbers у чистому JavaScript
+    // з використанням console.assert і підходу Arrange-Act-Assert. Перевір нормальні,
+    // порожні та некоректні значення (NaN, від'ємні, нуль).")
+    // Arrange
+    const nums1 = [1, 2, 3, 4, 5, 6];
+    const nums2 = [0, -2, -3, -4, 7];
+    const nums3 = [NaN, 2, NaN, 8];
+    const nums4 = [];
+    const nums5 = [11];
+
+    // Act
+    const even1 = getEvenNumbers(nums1);
+    const even2 = getEvenNumbers(nums2);
+    const even3 = getEvenNumbers(nums3);
+    const even4 = getEvenNumbers(nums4);
+    const even5 = getEvenNumbers(nums5);
+
+    // Assert
+    console.assert(JSON.stringify(even1) === JSON.stringify([2, 4, 6]), "getEvenNumbers: очікується [2,4,6]");
+    console.assert(JSON.stringify(even2) === JSON.stringify([0, -2, -4]), "getEvenNumbers: має працювати з від'ємними і нулем");
+    console.assert(JSON.stringify(even3) === JSON.stringify([2, 8]), "getEvenNumbers: має ігнорувати NaN");
+    console.assert(JSON.stringify(even4) === JSON.stringify([]), "getEvenNumbers: порожній вхід -> порожній вихід");
+    console.assert(JSON.stringify(even5) === JSON.stringify([]), "getEvenNumbers: непарні прибираються");
+  </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project 4 - Simple TODO List</title>
+  <style>
+    body {{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }}
+    h1 {{
+      margin-bottom: 1rem;
+    }}
+    .todo-input {{
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }}
+    input[type="text"] {{
+      flex: 1;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }}
+    button {{
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #333;
+      cursor: pointer;
+    }}
+    ul {{
+      list-style: none;
+      padding: 0;
+    }}
+    li {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.35rem 0.5rem;
+      border-bottom: 1px solid #eee;
+    }}
+    li span {{
+      flex: 1;
+    }}
+  </style>
+</head>
+<body>
+  <!--
+    Завдання (Project 4 - TODO List):
+
+    1. Сформулюйте промпт англійською:
+       "Create a simple JavaScript TODO list that lets the user add tasks and remove them
+        by clicking a 'Delete' button. Provide HTML, CSS and JavaScript code that I can run
+        in the browser."
+
+    2. Попросіть ШІ також:
+       - додати базовий стиль списку;
+       - пояснити, як працюють обробники подій.
+
+    3. Скопіюйте згенерований код і порівняйте його зі зразком нижче.
+    4. За бажанням, замініть реалізацію на свою або покращену ШІ-версію.
+  -->
+  <h1>Project 4: Проста TODO-список</h1>
+
+  <div class="todo-input">
+    <input id="todo-input" type="text" placeholder="Нова задача..." />
+    <button id="add-btn">Додати</button>
+  </div>
+
+  <ul id="todo-list"></ul>
+
+  <script>
+    const input = document.getElementById("todo-input");
+    const addBtn = document.getElementById("add-btn");
+    const list = document.getElementById("todo-list");
+
+    // Додає елемент у DOM список TODO (поведінкова частина)
+    function addTodo(text) {{
+      if (!text.trim()) return;
+
+      const li = document.createElement("li");
+      const span = document.createElement("span");
+      span.textContent = text;
+
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "Видалити";
+      delBtn.addEventListener("click", () => {{
+        list.removeChild(li);
+      }});
+
+      li.appendChild(span);
+      li.appendChild(delBtn);
+      list.appendChild(li);
+    }}
+
+    addBtn.addEventListener("click", () => {{
+      addTodo(input.value);
+      input.value = "";
+      input.focus();
+    }});
+
+    input.addEventListener("keydown", (e) => {{
+      if (e.key === "Enter") {{
+        addBtn.click();
+      }}
+    }});
+
+    // -----------------------------
+    // Домашнє завдання (Lesson 2):
+    // Згенеруй чисті функції для роботи з масивом todo та тести самостійно.
+    //
+    // Завдання:
+    // 1) Попроси ШІ згенерувати чисті функції (без DOM):
+    //    - addTodoItem(items, text)
+    //    - toggleTodoItem(items, id)
+    //    - removeTodoItem(items, id)
+    // 2) Додай unit-тести з console.assert у форматі AAA.
+    // 3) Перевір у консолі, що тести проходять. За потреби відредагуй код.
+    //
+    // Приклад промпта (встав у ШІ та заміни цей блок своїм кодом):
+    // "Створи чисті функції для роботи з масивом todo (addTodoItem, toggleTodoItem, removeTodoItem)
+    //  без DOM. Додай unit-тести з console.assert у форматі Arrange-Act-Assert, включаючи
+    //  кейси: додавання з триммінгом, інверсія done, видалення за id, ігнорування порожнього вводу.
+    //  Поверни тільки JS-код, який я зможу вставити у <script>."
+  </script>
+</body>
+</html>

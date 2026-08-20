@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project 1 - Bubble Sort with AI</title>
+  <style>
+    body {{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 2rem;
+      max-width: 800px;
+    }}
+    .box {{
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }}
+    button {{
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #333;
+      cursor: pointer;
+    }}
+    code {{
+      background: #f5f5f5;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }}
+  </style>
+</head>
+<body>
+  <!--
+    Завдання (Project 1 - Bubble Sort):
+
+    1. Перейдіть у ChatGPT (або інший ШІ-асистент).
+    2. Створіть промпт англійською:
+       "Help me write a JavaScript function that performs bubble sort on an array of numbers
+        and returns the sorted array. Provide a full example with HTML and JavaScript that
+        I can run in the browser."
+    3. Скопіюйте згенеровану функцію bubbleSort та приклад виклику.
+    4. Вставте їх у секцію <script> замість (або разом із) наявної реалізації.
+    5. Перевірте в браузері, що:
+       - виводиться початковий масив;
+       - після натискання кнопки відображається відсортований масив.
+    6. Якщо виникають помилки, сформуйте уточнений промпт з описом:
+       - тексту помилки;
+       - приблизного місця у коді;
+       - бажаного результату.
+
+    Код нижче - приклад можливої реалізації, який можна замінити на варіант ШІ.
+  -->
+  <h1>Project 1: Bubble Sort (AI-assisted)</h1>
+
+  <div class="box">
+    <p><strong>Початковий масив:</strong> <span id="original"></span></p>
+    <p><strong>Відсортований масив:</strong> <span id="sorted"></span></p>
+    <button id="sort-btn">Відсортувати</button>
+  </div>
+
+  <script>
+    const numbers = [5, 3, 8, 4, 2, 7, 1, 6];
+    const originalSpan = document.getElementById("original");
+    const sortedSpan = document.getElementById("sorted");
+    const sortBtn = document.getElementById("sort-btn");
+
+    originalSpan.textContent = numbers.join(", ");
+
+    // Приклад "згенерованого" коду bubble sort
+    function bubbleSort(arr) {{
+      const result = arr.slice();
+      const n = result.length;
+      let swapped = false;
+
+      for (let i = 0; i < n - 1; i++) {{
+        swapped = false;
+        for (let j = 0; j < n - 1 - i; j++) {{
+          if (result[j] > result[j + 1]) {{
+            const temp = result[j];
+            result[j] = result[j + 1];
+            result[j + 1] = temp;
+            swapped = true;
+          }}
+        }}
+        if (!swapped) break;
+      }}
+      return result;
+    }}
+
+    sortBtn.addEventListener("click", () => {{
+      const sorted = bubbleSort(numbers);
+      sortedSpan.textContent = sorted.join(", ");
+    }});
+  </script>
+</body>
+</html>

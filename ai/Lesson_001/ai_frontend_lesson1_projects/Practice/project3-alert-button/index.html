@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project 3 - Simple Alert Button</title>
+  <style>
+    body {{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 2rem;
+      gap: 1rem;
+    }}
+    button {{
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }}
+  </style>
+</head>
+<body>
+  <!--
+    Завдання (Project 3 - Alert Button):
+
+    1. Створіть промпт:
+       "Generate a simple HTML page with a button that shows an alert with the text
+        'Hello from AI-generated code!' when clicked."
+
+    2. Скопіюйте код, який згенерує ШІ, і порівняйте його з прикладом нижче:
+       - чи є семантичні елементи?
+       - який текст використовується у кнопці?
+
+    3. Змініть промпт так, щоб:
+       - кнопка була іншого кольору;
+       - текст alert був українською;
+       - сторінка мала заголовок <h1> із поясненням, що код згенеровано за допомогою ШІ.
+  -->
+  <h1>Project 3: Проста кнопка з alert</h1>
+  <p>Натисніть кнопку нижче, щоб побачити повідомлення.</p>
+  <button id="hello-btn">Натисни мене</button>
+
+  <script>
+    document.getElementById("hello-btn").addEventListener("click", function () {{
+      alert("Hello from AI-generated code!");
+    }});
+  </script>
+</body>
+</html>
