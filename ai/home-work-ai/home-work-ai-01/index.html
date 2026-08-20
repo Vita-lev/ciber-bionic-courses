@@ -3,101 +3,234 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Анімована кнопка</title>
-
+    <title>Nova AI — простий старт з штучним інтелектом</title>
     <style>
-      body {
+      :root {
+        --bg: #0b1020;
+        --card: #141a2e;
+        --text: #f4f6fb;
+        --muted: #a7b0c7;
+        --accent: #5b8cff;
+        --accent-2: #7c5cff;
+      }
+
+      * {
+        box-sizing: border-box;
         margin: 0;
-        height: 100vh;
+        padding: 0;
+      }
 
+      body {
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .wrap {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
         display: flex;
-        justify-content: center;
         align-items: center;
-
-        font-family: Arial, sans-serif;
-
-        background: linear-gradient(45deg, #ff0080, #7928ca, #007cf0, #00dfd8);
-
-        background-size: 400% 400%;
-        animation: backgroundAnimation 10s ease infinite;
+        justify-content: space-between;
+        padding: 20px 0;
       }
 
-      @keyframes backgroundAnimation {
-        0% {
-          background-position: 0% 50%;
-        }
-
-        50% {
-          background-position: 100% 50%;
-        }
-
-        100% {
-          background-position: 0% 50%;
-        }
+      .logo {
+        font-weight: 700;
+        letter-spacing: 0.04em;
       }
 
-      button {
-        padding: 20px 45px;
+      nav {
+        display: flex;
+        gap: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
 
-        border: none;
-        border-radius: 15px;
-
-        background: linear-gradient(45deg, #ff512f, #dd2476);
-
-        color: white;
-
-        font-size: 20px;
-        font-weight: bold;
-
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 22px;
+        border: 0;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #fff;
+        font-weight: 600;
         cursor: pointer;
-
-        box-shadow:
-          0 0 20px rgba(255, 255, 255, 0.5),
-          0 0 40px rgba(255, 81, 47, 0.5);
-
-        transition: 0.3s;
-
-        animation: buttonPulse 2s infinite;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
-      @keyframes buttonPulse {
-        0% {
-          transform: scale(1);
-        }
-
-        50% {
-          transform: scale(1.05);
-        }
-
-        100% {
-          transform: scale(1);
-        }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(91, 140, 255, 0.35);
       }
 
-      button:hover {
-        transform: scale(1.15) rotate(2deg);
-
-        box-shadow:
-          0 0 30px white,
-          0 0 60px #ff512f;
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 48px;
+        align-items: center;
+        padding: 72px 0 96px;
       }
 
-      button:active {
-        transform: scale(0.95);
+      .hero h1 {
+        font-size: clamp(32px, 5vw, 56px);
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+
+      .hero p {
+        color: var(--muted);
+        font-size: 18px;
+        max-width: 520px;
+        margin-bottom: 28px;
+      }
+
+      .hero-card {
+        background: radial-gradient(circle at top left, #2a3560, var(--card));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        padding: 32px;
+        min-height: 280px;
+      }
+
+      .hero-card h3 {
+        margin-bottom: 12px;
+      }
+
+      .hero-card p {
+        color: var(--muted);
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding-bottom: 96px;
+      }
+
+      .feature {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 18px;
+        padding: 24px;
+      }
+
+      .feature h3 {
+        margin: 12px 0 8px;
+        font-size: 18px;
+      }
+
+      .feature p {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .cta {
+        text-align: center;
+        background: linear-gradient(180deg, #151c33, #10162b);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        padding: 56px 24px;
+        margin-bottom: 80px;
+      }
+
+      .cta h2 {
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+
+      .cta p {
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      footer {
+        color: var(--muted);
+        font-size: 14px;
+        padding: 24px 0 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      @media (max-width: 800px) {
+        nav {
+          display: none;
+        }
+
+        .hero,
+        .features {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding: 40px 0 64px;
+        }
       }
     </style>
   </head>
-
   <body>
-    <button onclick="openChatGPT()">Відкрити ChatGPT 🚀</button>
+    <div class="wrap">
+      <header>
+        <div class="logo">NOVA AI</div>
+        <nav>
+          <a href="#features">Можливості</a>
+          <a href="#cta">Старт</a>
+        </nav>
+        <a class="btn" href="#cta">Спробувати</a>
+      </header>
 
-    <script>
-      function openChatGPT() {
-        alert("🚀 Зараз відкриється ChatGPT!");
+      <section class="hero">
+        <div>
+          <h1>Простий лендинг для швидкого старту з AI</h1>
+          <p>
+            Одна сторінка, зрозумілий меседж і кнопка дії. Підходить як домашня
+            робота, прототип продукту або перший екран курсу.
+          </p>
+          <a class="btn" href="#cta">Почати безкоштовно</a>
+        </div>
+        <div class="hero-card">
+          <h3>Що всередині</h3>
+          <p>
+            Заголовок, короткий опис, блок переваг і фінальний заклик. Без зайвих
+            секцій — лише те, що потрібно для першого враження.
+          </p>
+        </div>
+      </section>
 
-        window.open("https://chatgpt.com/", "_blank");
-      }
-    </script>
+      <section class="features" id="features">
+        <article class="feature">
+          <h3>Швидко</h3>
+          <p>Одна HTML-сторінка без фреймворків. Відкривається одразу.</p>
+        </article>
+        <article class="feature">
+          <h3>Зрозуміло</h3>
+          <p>Короткі блоки: проблема, цінність, дія. Легко читати з телефону.</p>
+        </article>
+        <article class="feature">
+          <h3>Готово до правки</h3>
+          <p>Можна замінити тексти, кольори і кнопку під будь-який продукт.</p>
+        </article>
+      </section>
+
+      <section class="cta" id="cta">
+        <h2>Готові запустити ідею?</h2>
+        <p>Замініть цей текст на свою оферту і опублікуйте сторінку.</p>
+        <a class="btn" href="https://chatgpt.com/" target="_blank" rel="noreferrer">
+          Відкрити ChatGPT
+        </a>
+      </section>
+
+      <footer>© 2026 Nova AI. Простий навчальний лендинг.</footer>
+    </div>
   </body>
 </html>
