@@ -7,7 +7,6 @@
     <title>Анімована кнопка</title>
 
     <style>
-      /* Сторінка */
       body {
         margin: 0;
         height: 100vh;
@@ -18,15 +17,12 @@
 
         font-family: Arial, sans-serif;
 
-        /* Анімований градієнт */
         background: linear-gradient(45deg, #ff0080, #7928ca, #007cf0, #00dfd8);
 
         background-size: 400% 400%;
-
         animation: backgroundAnimation 10s ease infinite;
       }
 
-      /* Анімація фону */
       @keyframes backgroundAnimation {
         0% {
           background-position: 0% 50%;
@@ -41,10 +37,7 @@
         }
       }
 
-      /* Кнопка */
       button {
-        position: relative;
-
         padding: 20px 45px;
 
         border: none;
@@ -68,7 +61,6 @@
         animation: buttonPulse 2s infinite;
       }
 
-      /* Анімація "пульсу" */
       @keyframes buttonPulse {
         0% {
           transform: scale(1);
@@ -83,7 +75,6 @@
         }
       }
 
-      /* При наведенні */
       button:hover {
         transform: scale(1.15) rotate(2deg);
 
@@ -92,7 +83,6 @@
           0 0 60px #ff512f;
       }
 
-      /* При натисканні */
       button:active {
         transform: scale(0.95);
       }
@@ -100,8 +90,14 @@
   </head>
 
   <body>
-    <button onclick="alert('🎉 Вітаю! Ти натиснув анімовану кнопку!')">
-      Натисни мене 🚀. ChatGPT
-    </button>
+    <button onclick="openChatGPT()">Відкрити ChatGPT 🚀</button>
+
+    <script>
+      function openChatGPT() {
+        alert("🚀 Зараз відкриється ChatGPT!");
+
+        window.open("https://chatgpt.com/", "_blank");
+      }
+    </script>
   </body>
 </html>
