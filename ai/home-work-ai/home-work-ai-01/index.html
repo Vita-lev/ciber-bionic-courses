@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Моя кнопка.GPT</title>
+    <title>Анімована кнопка</title>
 
     <style>
+      /* Сторінка */
       body {
         margin: 0;
         height: 100vh;
@@ -15,37 +16,92 @@
         justify-content: center;
         align-items: center;
 
-        background-color: #f4f4f4;
-
         font-family: Arial, sans-serif;
+
+        /* Анімований градієнт */
+        background: linear-gradient(45deg, #ff0080, #7928ca, #007cf0, #00dfd8);
+
+        background-size: 400% 400%;
+
+        animation: backgroundAnimation 10s ease infinite;
       }
 
+      /* Анімація фону */
+      @keyframes backgroundAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Кнопка */
       button {
-        padding: 15px 30px;
+        position: relative;
+
+        padding: 20px 45px;
 
         border: none;
-        border-radius: 10px;
+        border-radius: 15px;
 
-        background-color: #7c3aed;
+        background: linear-gradient(45deg, #ff512f, #dd2476);
+
         color: white;
 
-        font-size: 18px;
+        font-size: 20px;
+        font-weight: bold;
 
         cursor: pointer;
 
+        box-shadow:
+          0 0 20px rgba(255, 255, 255, 0.5),
+          0 0 40px rgba(255, 81, 47, 0.5);
+
         transition: 0.3s;
+
+        animation: buttonPulse 2s infinite;
       }
 
+      /* Анімація "пульсу" */
+      @keyframes buttonPulse {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.05);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* При наведенні */
       button:hover {
-        background-color: #5b21b6;
-        transform: scale(1.05);
+        transform: scale(1.15) rotate(2deg);
+
+        box-shadow:
+          0 0 30px white,
+          0 0 60px #ff512f;
+      }
+
+      /* При натисканні */
+      button:active {
+        transform: scale(0.95);
       }
     </style>
   </head>
 
   <body>
-    <button onclick="alert('Привіт! Це моя перша AI-сторінка!')">
-      Натисни мене. GPT
+    <button onclick="alert('🎉 Вітаю! Ти натиснув анімовану кнопку!')">
+      Натисни мене 🚀. ChatGPT
     </button>
   </body>
 </html>
