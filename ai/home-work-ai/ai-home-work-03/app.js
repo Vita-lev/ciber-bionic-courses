@@ -1,1 +1,0 @@
-const apiKey = "AQ.Ab8RN6JkcghFfmv_IDfpIeaMFJcnntMhjzw7mEHh5iSIwbQbpg";
