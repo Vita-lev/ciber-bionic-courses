@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #6d5dfc, transparent 30%),
+        radial-gradient(circle at bottom right, #00c6ff, transparent 30%),
+        #111827;
+}
+
+form {
+    width: min(600px, 90%);
+    padding: 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+
+    animation: showForm 0.8s ease;
+}
+
+@keyframes showForm {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#prompt {
+    width: 100%;
+    padding: 18px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+#prompt::placeholder {
+    color: #b8b8c7;
+}
+
+#prompt:focus {
+    border-color: #8b7cff;
+
+    box-shadow: 0 0 20px rgba(139, 124, 255, 0.5);
+}
+
+button {
+    flex: 1;
+
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+
+    color: white;
+}
+
+#clear {
+    background: #374151;
+
+    color: white;
+}
+
+#stop {
+    background: #ef4444;
+
+    color: white;
+}
+
+#result {
+    position: absolute;
+
+    width: min(600px, 90%);
+    margin-top: 450px;
+    padding: 25px;
+
+    min-height: 100px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    line-height: 1.6;
+
+    animation: showForm 1s ease;
+}
+
+@media (max-width: 500px) {
+    form {
+        padding: 25px;
+    }
+
+    button {
+        flex-basis: 100%;
+    }
+}
