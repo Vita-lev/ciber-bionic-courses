@@ -1,23 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gemini home-work</title>
+    <title>Gemini — запитай модель</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <form id="form" action="" method="">
-      <input id="prompt" type="text" placeholder="напиши своє питання" />
+    <div class="bg" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="grid"></span>
+    </div>
 
-      <button type="submit">генерувати</button>
+    <main class="app">
+      <header class="hero">
+        <p class="eyebrow">01 / Gemini</p>
+        <h1>Запитай<br />модель</h1>
+        <p class="lede">Короткий запит — зібрана відповідь. Без зайвого інтерфейсу.</p>
+      </header>
 
-      <button type="button" id="clear">очистити</button>
+      <form id="form" action="" method="">
+        <label class="field" for="prompt">
+          <span>Запит</span>
+          <input id="prompt" type="text" placeholder="напиши своє питання" autocomplete="off" />
+        </label>
 
-      <button type="button" id="stop">зупинити</button>
-    </form>
+        <div class="actions">
+          <button type="submit">генерувати</button>
+          <button type="button" id="clear">очистити</button>
+          <button type="button" id="stop">зупинити</button>
+        </div>
+      </form>
 
-    <div id="result"></div>
+      <div id="result"></div>
+    </main>
 
     <script src="script.js"></script>
   </body>
