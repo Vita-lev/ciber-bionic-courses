@@ -3,10 +3,6 @@ const prompt = document.getElementById('prompt');
 const result = document.getElementById('result');
 
 
-
-const apiKey = "YOUR_API_KEY";
-
-
 const API_URL =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent";
 
