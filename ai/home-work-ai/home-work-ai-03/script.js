@@ -4,7 +4,7 @@ const result = document.getElementById('result');
 
 
 
-const apiKey = "AQ.Ab8RN6IneOIZo1_x-7AO3Bvu0lO5v7YwBrTI14wae_vqRWea5g";
+const apiKey = "YOUR_API_KEY";
 
 
 const API_URL =
